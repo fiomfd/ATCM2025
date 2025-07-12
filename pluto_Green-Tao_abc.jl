@@ -228,6 +228,17 @@ end
 
 end
 
+# ╔═╡ 9348893d-4c0e-40e3-8d83-5579474ac321
+
+
+# ╔═╡ 743944e4-83ad-44e6-afe7-91affeb4b965
+md"""
+#### GitHub
+
+Pluto/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ACTM2025](https://github.com/fiomfd/ACTM2025).
+
+"""
+
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
@@ -1372,5 +1383,7 @@ version = "17.4.0+2"
 # ╟─bb6e2546-3b5d-4817-9f90-0fbe11c1ea4a
 # ╟─96d2b74a-56a6-4599-8da5-bc505374cd2a
 # ╟─5f5c69ac-247f-4a7c-b219-6962f398b7e1
+# ╟─9348893d-4c0e-40e3-8d83-5579474ac321
+# ╟─743944e4-83ad-44e6-afe7-91affeb4b965
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
