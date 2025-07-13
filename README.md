@@ -1,4 +1,4 @@
-- pluto_Green-Tao_abc.jl
+- pluto_Green-Tao_abc.jl with QR_ACTM2025.png
 
   Pluto file used for presentation
 
