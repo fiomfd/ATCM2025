@@ -36,7 +36,7 @@ md"""
 ### Computational explorations of examples arising in modern number theory
 ##### [Hiroyuki Chihara](https://fiomfd.github.io/) (University of the Ryukyus, Okinawa Island, Japan)
 #####
-##### [ACTM](https://atcm.mathandtech.org/) 2025, 13-16 December 2025, [Ateneo de Manila University](https://www.ateneo.edu/)
+##### [ATCM](https://atcm.mathandtech.org/) 2025, 13-16 December 2025, [Ateneo de Manila University](https://www.ateneo.edu/)
 #####
 ABSTRACT: We present a hands-on example of computational thinking at the intersection of mathematics and programming. Leveraging the Julia programming language and its Pluto.jl notebook environment, we visualize computational explorations inspired by two central themes in modern number theory: the Green–Tao theorem and the abc conjecture. By combining built-in primality tests with compact code in Julia, MATLAB, and Mathematica, we generate long arithmetic sequences of primes and enumerate abc-triplets with unusually small radical values. Our educational objective is to help students experience the scale and subtlety of modern number-theoretic phenomena through interactive and reproducible computation.
 
@@ -61,10 +61,10 @@ md"""
 ### What is [Julia](https://julialang.org/)?
 
 - A high-level programming language designed for scientific computing (2012-). See [this article](https://julialang.org/blog/2017/03/julia-fresh-paper/).
-- It ranks low on the [TIOBE Index](https://www.tiobe.com/tiobe-index/) (approx. 35th).
-- Strongly recommended by SIAM for applied mathematics. See [this article](https://siam-web.useast01.umbraco.io/publications/siam-news/articles/rapid-prototyping-with-julia-from-mathematics-to-fast-code/).
+- It ranks low on the [**TIOBE Index**](https://www.tiobe.com/tiobe-index/) (approx. 35th).
+- Strongly recommended by **SIAM** for applied mathematics. See [this article](https://siam-web.useast01.umbraco.io/publications/siam-news/articles/rapid-prototyping-with-julia-from-mathematics-to-fast-code/).
 - SIAM, Society for Industrial and Applied Mathematics, is the world's largest professional organization for applied and industrial mathematics.
-- MIT course ["Introdoction to Computational Thinking"](https://computationalthinking.mit.edu/) povides classes using Julia and its interactive notebook environment [Pluto.jl](https://plutojl.org/).
+- **MIT** course ["**Introdoction to Computational Thinking**"](https://computationalthinking.mit.edu/) povides classes using Julia and its interactive notebook environment [**Pluto.jl**](https://plutojl.org/).
 """
 
 # ╔═╡ f4f20aed-dfb4-45d7-bb71-63dc8200c5a7
@@ -86,6 +86,11 @@ $\pi(x) \bigg/ \dfrac{x}{\log{x}}
 (x \rightarrow \infty).$
 
 In 1896, the Prime Number Theorem was proved by Jacques Hadamard and Charles Jean de la Vallée-Poussin independently.
+
+The following graphs visualize 
+- The difference $\pi(x) - \dfrac{x}{\log{x}} \rightarrow \infty$ as $x \rightarrow \infty$.
+
+- The convergence of $\pi(x) \bigg/ \dfrac{x}{\log{x}}$ is very slow. 
 """
 
 # ╔═╡ 2bf8e26a-65ce-468c-880f-813e01de5d73
@@ -352,13 +357,13 @@ end
 md"""
 #### GitHub
 
-Pluto/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ACTM2025](https://github.com/fiomfd/ACTM2025).
+Pluto/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ATCM2025](https://github.com/fiomfd/ACTM2025).
 
 """
 
 # ╔═╡ a06de734-c4ac-440b-80e6-589760608ae5
 begin
-	QR=load("QR_ACTM2025.png");
+	QR=load("QR_ATCM2025.png");
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
