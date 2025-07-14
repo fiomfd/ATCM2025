@@ -94,18 +94,18 @@ The following graphs visualize
 
 # ╔═╡ 2bf8e26a-65ce-468c-880f-813e01de5d73
 begin
-	P1=zeros(100000);
+	P1=zeros(10000);
     P1[1]=1;
     P1[2]=1;
-    L1=zeros(100000);
+    L1=zeros(10000);
     L1[1]=3/log(3);
     L1[2]=3/log(3);
-    N1=zeros(100000);
+    N1=zeros(10000);
     N1[1]=1;
     N1[2]=2;
-    Q1=ones(100000);
+    Q1=ones(10000);
 
-    for i=3:100000
+    for i=3:10000
         A1=zeros(i);
         for j=1:i
             A1[j]=Float64(isprime(j));
@@ -122,7 +122,7 @@ begin
         right_margin=Plots.Measures.Length(:mm, 10.0),
         left_margin=Plots.Measures.Length(:mm, 5.0),
         xlabel=L"x",
-        xticks = ([1 50000 100000;], ["e",50000,100000]),
+        xticks = ([1 5000 10000;], ["e",5000,10000]),
         yaxis="Number of Primes",
         legendfont=font(10), 
         label=[L"\pi(x)" "x/log(x)"],
@@ -137,7 +137,7 @@ begin
         right_margin=Plots.Measures.Length(:mm, 10.0),
         left_margin=Plots.Measures.Length(:mm, 5.0),
         xlabel=L"x",
-        xticks = ([1 50000 100000;], ["e",50000,100000]),
+        xticks = ([1 5000 10000;], ["e",5000,10000]),
         yaxis="",
         yticks = ([0 1;], [0,1]),
         label = :false,
@@ -196,7 +196,7 @@ begin
 	end
 
     for i=1:4
-        for b=0:5000
+        for b=0:4000
             for c=1:2000
                 for n=1:k
                     P[n]=a[i]+10*b+2*c*(n-1);
@@ -238,8 +238,7 @@ m(1),\dotsc,m(k)\in\mathbb{N},$
 
 then the radical of $N$ is defined by 
 
-$\operatorname{rad}(N):=p_1 \dotsb p_k
-.$
+$\operatorname{rad}(N):=p_1 \dotsb p_k.$
 
 For example
 
@@ -261,6 +260,8 @@ $X[\kappa]
 Shinichi Mochizuki claimed to have a proof in 2012, and the four papers were published in 2020. 
 
 We now remark some properties of $X[\kappa]$:
+
+- If $\kappa<\mu$, then $X[\mu] \subset X[\kappa]$.
 
 - We have $(1,8,9),(5,27,32){\in}X[1]$ since 
 
@@ -290,7 +291,7 @@ $b
 (3+1)
 (3-1).$
 
-and $b=3^{2^k}-1$ is a nultiple of $2^{k+2}$ since $3+1=4=2^2$. The we have 
+and $b=3^{2^k}-1$ is a multiple of $2^{k+2}$ since $3+1=4=2^2$. The we have 
 
 $\operatorname{rad}\bigl(1\cdot(3^{2^k}-1)\cdot3^{2^k}\bigr)
 =
@@ -316,7 +317,7 @@ $(2, 3^{10}\cdot109, 23^5),
 
 # ╔═╡ 96d2b74a-56a6-4599-8da5-bc505374cd2a
 md"""
-κ = $(@bind κ Slider(1.3:0.02:1.58, show_value=true, default=1.4)) 
+κ = $(@bind κ Slider(1.1:0.05:1.6, show_value=true, default=1.1)) 
 """
 
 # ╔═╡ 5f5c69ac-247f-4a7c-b219-6962f398b7e1
