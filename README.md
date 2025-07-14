@@ -4,12 +4,16 @@
 
 - julia_Green-Tao_abc.ipynb
 
-  julia & jupyter notebook file exploring examples
+  Julia & Jupyter notebook file exploring examples
 
 - mathematica_Green-Tao_abc.nb
   
   Mathematica file exploring examples
 
-- MATLAB_Green-Tao_abc.mlx
+- (upcoming) MATLAB_Green-Tao_abc.mlx 
   
   MATLAB live script exploring examples
+
+- (upcoming) python_Green-Tao_abc.mlx 
+  
+  Python & Jupyter notebook file exploring examples
