@@ -346,7 +346,7 @@ begin
 end
 
     abc=["a", "b", "c"]
-    R=DataFrame(Q,Symbol.(abc));
+    R=DataFrame(Q[Not(1), :],Symbol.(abc));
 
 end
 
