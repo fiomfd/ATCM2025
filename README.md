@@ -2,7 +2,7 @@
 
   Pluto file used for presentation
 
-- julia_Green-Tao_abc.
+- julia_Green-Tao_abc.ipynb
 
   julia & jupyter notebook file exploring examples
 
