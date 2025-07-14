@@ -2,6 +2,10 @@
 
   Pluto file used for presentation
 
+- julia_Green-Tao_abc.
+
+  julia & jupyter notebook file exploring examples
+
 - mathematica_Green-Tao_abc.nb
   
   Mathematica file exploring examples
