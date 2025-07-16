@@ -251,7 +251,7 @@ For $\kappa\geqq1$, set
 
 $X[\kappa]
 :=
-\{(a,b,c) \in X : c \geqq \bigl(\operatorname{rad}(abc\bigr)^\kappa
+\{(a,b,c) \in X : c \geqq \bigl(\operatorname{rad}(abc)\bigr)^\kappa
 \}.$
 
 ###### The abc conjecture states that $\lvert{X[\kappa]}\rvert<\infty$ for any $\kappa>1$.
