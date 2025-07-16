@@ -359,6 +359,17 @@ md"""
 
 Pluto/Julia/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ATCM2025](https://github.com/fiomfd/ACTM2025).
 
+- Julia Pluto file used for this presentation
+
+- Julia & Jupyter notebook file exploring examples
+
+- MATLAB live script exploring examples
+
+- Python & Jupyter notebook file exploring examples
+
+- Mathematica file exploring examples
+
+###### **Note**: *GeoGebra cannot deal with* $\pi(x)$ *and* $\text{rad}$.
 """
 
 # ╔═╡ a06de734-c4ac-440b-80e6-589760608ae5
