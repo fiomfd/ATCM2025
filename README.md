@@ -10,7 +10,7 @@
   
   MATLAB live script exploring examples
 
-- (upcoming) python_Green-Tao_abc.mlx 
+- python_Green-Tao_abc.mlx 
   
   Python & Jupyter notebook file exploring examples
 
