@@ -10,7 +10,7 @@
   
   Mathematica file exploring examples
 
-- (upcoming) live_Green-Tao_abc.mlx 
+- live_Green-Tao_abc.mlx 
   
   MATLAB live script exploring examples
 
