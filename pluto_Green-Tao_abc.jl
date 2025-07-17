@@ -254,6 +254,14 @@ $X[\kappa]
 \{(a,b,c) \in X : c \geqq \bigl(\operatorname{rad}(abc)\bigr)^\kappa
 \}.$
 
+If $a+b=c$ and $\operatorname{gcd}(a,b)=1$, then we have $\operatorname{gcd}(b,c)=\operatorname{gcd}(c,a)=1$ and 
+
+$X=
+\{
+(a,b,c)\in\mathbb{N} : a<b<c, a+b=c, 
+\operatorname{gcd}(a,b)=1
+\}.$
+
 ###### The abc conjecture states that $\lvert{X[\kappa]}\rvert<\infty$ for any $\kappa>1$.
 ######
 
@@ -329,7 +337,7 @@ begin
         X=factor(Vector,a*b*c);
         L=length(X);
         rad=X[1];
-        if [gcd(a,b) gcd(a,c) gcd(b,c)]==[1 1 1]
+        if gcd(a,b)==1
             for i=2:L
                 if X[i]==X[i-1]
                     rad=rad*1;
