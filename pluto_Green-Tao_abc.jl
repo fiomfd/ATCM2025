@@ -37,7 +37,7 @@ md"""
 #####
 ##### [ATCM](https://atcm.mathandtech.org/) 2025, 13-16 December 2025, [Ateneo de Manila University](https://www.ateneo.edu/)
 #####
-ABSTRACT: We present a hands-on example of computational thinking at the intersection of mathematics and programming. Leveraging the Julia programming language and its Pluto.jl notebook environment, we visualize computational explorations inspired by two central themes in modern number theory: the Green–Tao theorem and the abc conjecture. By combining built-in primality tests with compact code in Julia, MATLAB, and Mathematica, we generate long arithmetic sequences of primes and enumerate abc-triplets with unusually small radical values. Our educational objective is to help students experience the scale and subtlety of modern number-theoretic phenomena through interactive and reproducible computation.
+ABSTRACT: We present a hands-on example of computational thinking at the intersection of mathematics and programming. Leveraging the Julia programming language and its Pluto.jl notebook environment, we visualize computational explorations inspired by two central themes in modern number theory: the Green–Tao theorem and the abc conjecture. By combining built-in primality tests with compact code in Julia, Python, MATLAB, and Mathematica, we generate long arithmetic sequences of primes and enumerate abc-triplets with unusually small radical values. Our educational objective is to help students experience the scale and subtlety of modern number-theoretic phenomena through interactive and reproducible computation.
 
 """
 
@@ -49,7 +49,7 @@ md"""
 
 - A beginner in applied mathematics and programming languages Julia/MATLAB (2020-).
 
-- Being inspred by the MIT course on computational thinking, I am working on modernizing and visualizing the content of my mathematics classes. 
+- Being inspred by the MIT course on computational thinking, I am working on modernizing and visualizing the contents of my mathematics classes. 
 """
 
 # ╔═╡ 31213987-bb48-469c-83d4-e768fa21f599
@@ -354,7 +354,7 @@ begin
 end
 
     abc=["a", "b", "c"]
-    R=DataFrame(Q[Not(1), :],Symbol.(abc));
+    R=sort!(DataFrame(Q[Not(1), :],Symbol.(abc)), :c);
 
 end
 
