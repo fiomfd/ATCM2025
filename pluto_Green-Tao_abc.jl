@@ -32,7 +32,7 @@ end
 
 # ╔═╡ dcec0170-5f16-489d-8cd4-e15b8c8558fa
 md""" 
-### Computational explorations of examples arising in modern number theory
+### Computational explorations in modern number theory: the Green–Tao theorem and the abc conjecture
 ##### [Hiroyuki Chihara](https://fiomfd.github.io/) (University of the Ryukyus, Okinawa Island, Japan)
 #####
 ##### [ATCM](https://atcm.mathandtech.org/) 2025, 13-16 December 2025, [Ateneo de Manila University](https://www.ateneo.edu/)
