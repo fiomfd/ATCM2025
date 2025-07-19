@@ -172,18 +172,25 @@ We explore such arithmetic progressions $\{x_n\}_{n=1}^k$ using Julia.
 Note that 
 - If $x_1=2$, then $k\leqq2$. 
 - If $x_1\ne2$, then the common difference of successive members is even. 
-- If the final digit of $x_1$ is $5$, then $k\leqq5$.
+- If the final digit of $x_1$ is $5$, then $k\leqq5$ since $5+2c\times5$ is not a prime.
+- If the final digit of $x_1$ is $1,3,7,9$ and thefinal digit of the common difference is $2,4,6,8$, then $k\leqq4$. Indeed
+
+$2\times1=2, \quad 2\times2=4, \quad 2\times3=6, \quad 2\times4=8 \quad\text{mod}\quad 10,$
+$4\times1=4, \quad 4\times2=8, \quad 4\times3=2, \quad 4\times4=6 \quad\text{mod}\quad 10,$
+$6\times1=6, \quad 6\times2=2, \quad 6\times3=8, \quad 6\times4=4 \quad\text{mod}\quad 10,$
+$8\times1=8, \quad 8\times2=6, \quad 8\times3=4, \quad 8\times4=2 \quad\text{mod}\quad 10,$
+$1+4=0, \quad 3+2=0, \quad 7+8=0, \quad 9+6=0 \quad\text{mod}\quad 5.$
 
 So we investigate such arithmetic progressions of the form:
 
-$x_n=(a+10b)+2c\times(n-1), \quad n=1,2,3,\dotsc,k,$
+$x_n=(a+10b)+10c\times(n-1), \quad n=1,2,3,\dotsc,k,$
 
-where $x_1=a+10b$ is the first term, $2c$ is the common difference, $a=1,3,7,9$, and $b,c=1,2,3,\dotsc.$
+where $x_1=a+10b$ is the first term, $10c$ is the common difference, $a=1,3,7,9$, and $b,c=1,2,3,\dotsc.$
 """
 
 # ╔═╡ 3ace02be-1b05-447b-819f-af826999e89e
 md"""
-k = $(@bind k Slider(3:1:10, show_value=true, default=3)) 
+k = $(@bind k Slider(5:1:10, show_value=true, default=5)) 
 """
 
 # ╔═╡ 383d3208-4313-4e06-a0cf-738c489bac18
@@ -199,7 +206,7 @@ begin
         for b=0:4000
             for c=1:2000
                 for n=1:k
-                    P[n]=a[i]+10*b+2*c*(n-1);
+                    P[n]=a[i]+10*b+10*c*(n-1);
 				end
 				if all(m -> isprime(P[m]), 1:k)
                     X=[X;P];
@@ -2567,7 +2574,7 @@ version = "1.9.2+0"
 # ╟─b006d571-aaad-434c-a77d-ca5d7c1e9e91
 # ╟─2bf8e26a-65ce-468c-880f-813e01de5d73
 # ╟─ec85f224-0710-49f7-b795-eacaa90da1a5
-# ╟─65d16ab7-6c8d-49db-b233-2273958b16fa
+# ╠═65d16ab7-6c8d-49db-b233-2273958b16fa
 # ╟─3ace02be-1b05-447b-819f-af826999e89e
 # ╟─383d3208-4313-4e06-a0cf-738c489bac18
 # ╟─b241339f-3d76-4747-b7db-e551d19d66fc
