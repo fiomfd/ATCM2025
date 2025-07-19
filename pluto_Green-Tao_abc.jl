@@ -367,11 +367,11 @@ md"""
 
 Pluto/Julia/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ATCM2025](https://github.com/fiomfd/ACTM2025).
 
-- Julia Pluto file used for this presentation
+- Julia & Pluto.jl file used for this presentation
 
 - Julia & Jupyter notebook file exploring examples
 
-- MATLAB live script exploring examples
+- MATLAB livescript file exploring examples
 
 - Python & Jupyter notebook file exploring examples
 
