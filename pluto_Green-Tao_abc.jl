@@ -173,7 +173,7 @@ Note that
 - If $x_1=2$, then $k\leqq2$. 
 - If $x_1\ne2$, then the common difference of successive members is even. 
 - If the final digit of $x_1$ is $5$, then $k\leqq5$ since $5+2c\times5$ is not a prime.
-- If the final digit of $x_1$ is $1,3,7,9$ and thefinal digit of the common difference is $2,4,6,8$, then $k\leqq4$. Indeed
+- If the final digit of $x_1$ is $1,3,7,9$ and the final digit of the common difference is $2,4,6,8$, then $k\leqq4$. Indeed
 
 $2\times1=2, \quad 2\times2=4, \quad 2\times3=6, \quad 2\times4=8 \quad\text{mod}\quad 10,$
 $4\times1=4, \quad 4\times2=8, \quad 4\times3=2, \quad 4\times4=6 \quad\text{mod}\quad 10,$
@@ -2574,7 +2574,7 @@ version = "1.9.2+0"
 # ╟─b006d571-aaad-434c-a77d-ca5d7c1e9e91
 # ╟─2bf8e26a-65ce-468c-880f-813e01de5d73
 # ╟─ec85f224-0710-49f7-b795-eacaa90da1a5
-# ╠═65d16ab7-6c8d-49db-b233-2273958b16fa
+# ╟─65d16ab7-6c8d-49db-b233-2273958b16fa
 # ╟─3ace02be-1b05-447b-819f-af826999e89e
 # ╟─383d3208-4313-4e06-a0cf-738c489bac18
 # ╟─b241339f-3d76-4747-b7db-e551d19d66fc
