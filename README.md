@@ -21,3 +21,6 @@ This repository provides some notebooks related to the presentation titled "Comp
 - mathematica_Green-Tao_abc.nb
   
   Mathematica file exploring examples
+
+
+**Directries**
