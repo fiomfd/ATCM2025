@@ -24,3 +24,9 @@ This repository provides some notebooks related to the presentation titled "*Com
 
 
 **Directries**
+
+- Calculus I
+
+- Calculus II
+
+- Linear Algebra
