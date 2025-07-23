@@ -4,7 +4,7 @@ This repository provides some notebooks related to the presentation titled "*Com
   
 - **MATLAB livescript**: live_Green-Tao_abc.mlx 
 
-- **Python + Jupyter**: python_Green-Tao_abc.mlx 
+- **Python + Jupyter Notebook**: python_Green-Tao_abc.mlx 
 
 - **Mathematica**: mathematica_Green-Tao_abc.nb
 
@@ -19,8 +19,8 @@ In addition to the presentation materials, this repository provides selected int
 
 
 All examples are available in:
-- Pluto (Julia)
-- Jupyter Notebook (Python)
-- MATLAB Live Scripts
+- Julia + Pluto
+- Python + Jupyter Notebook
+- MATLAB Livescripts
 
 These are intended to support active learning and can be used freely in classroom or self-study settings.
