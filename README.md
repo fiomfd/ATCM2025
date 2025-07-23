@@ -1,21 +1,20 @@
 This repository provides some notebooks related to the presentation titled "*Computational explorations in modern number theory: the Green–Tao theorem and the abc conjecture*" by [Hiroyuki Chihara](https://fiomfd.github.io/) at [ATCM 2025](https://atcm.mathandtech.org/)
 
-- pluto_Green-Tao_abc.jl with QR_ATCM2025.png
+- **Julia + Pluto**
 
-  Pluto file used for presentation
+  pluto_Green-Tao_abc.jl with QR_ATCM2025.png
   
-- live_Green-Tao_abc.mlx 
+- **MATLAB livescript**
   
-  MATLAB live script exploring examples
+  live_Green-Tao_abc.mlx 
 
-- python_Green-Tao_abc.mlx 
-  
-  Python & Jupyter notebook file exploring examples
+- **Python + Jupyter**
 
-- mathematica_Green-Tao_abc.nb
-  
-  Mathematica file exploring examples
+  python_Green-Tao_abc.mlx 
 
+- **Mathematica**
+
+  mathematica_Green-Tao_abc.nb
 
 
 In addition to the presentation materials, this repository provides selected interactive notebooks for fundamental undergraduate mathematics courses:
