@@ -1,6 +1,6 @@
 ### Matrix and Data
 
-Here are some notebooks with CityU.jpg
+Here are some notebooks with CityU.jpg: 
 - **Julia & Pluto**: pluto_matrix_and_data.jp
 - **MATLAB livescript**:
 - **Python & Jupyter Notebook**:  
