@@ -1,7 +1,7 @@
 ### Calculus II
 
 Here are some notebooks: 
-- **Julia & Pluto**: pluto_Calculus_II.jl
+- **Julia & Pluto**: pluto_Calculus_II.jl  [html](https://fiomfd.github.io/pluto_Calculus_II.html)
 - **MATLAB livescript**:
 - **Python & Jupyter Notebook**:  
 
