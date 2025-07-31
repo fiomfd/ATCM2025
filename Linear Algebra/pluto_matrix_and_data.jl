@@ -414,12 +414,12 @@ end
 
 # ╔═╡ c53a862a-0a1d-479e-a84e-f32d7bd7cfc8
 md"""
-#### ４. Wavelet decomposition and image processing
+#### 3. Wavelet decomposition and image processing
 """
 
 # ╔═╡ 6b1ce739-aca6-47d6-842a-701712b2cc61
 md"""
-##### 4-1. The Haar wavelet
+##### 3-1. The Haar wavelet
 The discrete wavelet is a pair of orthonomal two vectors $\vec{u}$ and $\vec{v}$ satisfying some condition, and the most typical example of the discrete wavelets is the Haar wavelet. They are very simple vectors: 
 
 $\vec{u}
@@ -559,7 +559,8 @@ begin
 end
 
 # ╔═╡ b9212600-820b-4edc-a265-ddf8334700c9
-md""" $8\times8$ grayscale image
+md""" 
+##### 3-2. $8\times8$ grayscale image
 
 """
 
@@ -652,7 +653,7 @@ end
 
 # ╔═╡ 4d12cd8c-7d1d-4611-887f-bfdd53da48e9
 md""" 
-##### 4-3. $16\times16$ RGB image created by random numbers
+##### 3-3. $16\times16$ RGB image created by random numbers
 
 """
 
@@ -743,7 +744,7 @@ end
 
 # ╔═╡ 6468175c-7a79-4ab8-8879-eb442694c06d
 md""" 
-##### 4-4. $384\times512$ RGB image
+##### 3-4. $384\times512$ RGB image
 fried noodle at a canteen, City University of Hong Kong
 
  $384=2^7\times3$, $512=2^9$
