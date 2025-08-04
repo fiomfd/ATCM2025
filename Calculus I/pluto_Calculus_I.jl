@@ -46,7 +46,7 @@ md"""
 md"""
 #### 1. Differentiability
 
-Let $f(x)$ be a function on an inverval $I$, and fix an arbitrary point $\bigl(a,f(x)\bigr)$ on the graph $\Gamma(f):=\{(x,f(x)) : x \in I\}$ of $f$. We consider all the lines passing trough $(a,f(a))$, that is, we deal with a line $y=g(x):=f(a)+\beta(x-a)$ for all $\beta\in\mathbb{R}$. Strictly speaking we do not sonsider the vertical line $x=a$.  We observe the difference $f(x)-g(x)$ as $x \rightarrow a$. 
+Let $f(x)$ be a function on an inverval $I$, and fix an arbitrary point $\bigl(a,f(a)\bigr)$ on the graph $\Gamma(f):=\{(x,f(x)) : x \in I\}$ of $f$. We consider all the lines passing trough $(a,f(a))$, that is, we deal with a line $y=g(x):=f(a)+\beta(x-a)$ for all $\beta\in\mathbb{R}$. Strictly speaking we do not sonsider the vertical line $x=a$.  We observe the difference $f(x)-g(x)$ as $x \rightarrow a$. 
 """
 
 # ╔═╡ 6abea7c8-899d-4278-8e43-043ae1147fdf
@@ -205,7 +205,7 @@ end
 
 # ╔═╡ 2dc43448-3cf4-475f-8b61-d16c3594d9e3
 md""" 
-#### 1-4 Definition of differentiability
+#### 1-4. Definition of differentiability
 
 Suppose that a function f(x)$ は $x=a$ is defined on an inverval $(a-\delta,a+\delta)$ near $x=a$. 
 
@@ -259,7 +259,7 @@ $\frac{f(x)-f(a)}{x-a}
 md"""
 #### 2. Taylor's Theorem and Taylor Expansion
 
-Taylor's theorem says that if $f(x)$ is $C^\infty$ near $x=a$ then for any $N=1,2,3,\dotsc$
+Taylor's theorem says that if $f(x)$ is $C^\infty$ near $x=a$ then for any $N=1,2,3,\dotsc$, then 
 
 $f(x)
 =
@@ -401,7 +401,7 @@ begin
 	f5=sin.(2*pi*x5)+x5+1.3*ones(501);
 	
 	g5=zeros(501);
-	for j=1:501
+	for j=1:500
 		g5[j]=f5[Int64(floor(floor(n5*j/501)*501/2/n5)+ceil(ceil(n5*j/501)*501/2/n5))];
 	end
 end
