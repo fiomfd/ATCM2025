@@ -104,6 +104,7 @@ end
 # ╔═╡ 0440bbe2-4865-4fd8-bb6d-5ec6d2eaa480
 md"""
 ### 2D Polar Coordinate System
+$(x,y)=(r\cos\theta,r\sin\theta),\quad (r,\theta)=[0,\infty)\times[0,2\pi).$
 """
 
 # ╔═╡ d8691762-85d5-4cac-9fc3-e492c918e75e
@@ -155,6 +156,9 @@ end
 # ╔═╡ b84cacfd-7072-4aeb-8435-f8b30c3f43fb
 md"""
 ### 3D Polar Coordinate System
+$(x,y,z)=(r\sin\theta\cos\varphi, r\sin\theta \sin\varphi,r\cos\theta),
+\quad
+(r,\theta,\varphi)\in[0,\infty)\times[0,\pi]\times[0,2\pi).$
 """
 
 # ╔═╡ 4c217a39-1d98-4025-8eb1-6a1a7f1d0142
