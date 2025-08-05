@@ -34,50 +34,16 @@ begin
 	nbsp = html"&nbsp"
 end
 
-# ╔═╡ edd96a98-2825-4149-aed5-a9d00767a65f
+# ╔═╡ 0cb67d51-05bd-4182-aa5f-f2c8bc039a57
 md"""
-### Planes in $\mathbb{R}^3$
+### Calculus II
+##### Hiroyuki Chihara (University of the Ryukyus, Okinawa Island, Japan)
+
+1. Tangent planes
+2. Polar coordinates
+3. Newton's method and gradiend descent
+4. Riemann sums and Riemann integrals
 """
-
-# ╔═╡ 7abdbf5c-5ed2-41c8-8e37-64d80a3b4203
-md"""
- α = $(@bind a0 Slider(-5:0.5:5, show_value=true, default=1)) 
- $nbsp $nbsp
- β = $(@bind b0 Slider(-5:0.5:5, show_value=true, default=1))
-
- altitude = $(@bind latitude0 Slider(0:2:88, show_value=true, default=30)) deg
- $nbsp $nbsp
- azimuth= $(@bind longitude0 Slider(0:2:358, show_value=true, default=30)) deg
-"""
-
-# ╔═╡ 3bb5a21a-90fe-44a5-b3e9-9c380e1d2dd9
-begin
-	x1 = range(-1, length=21, stop=1);
-	y1 = range(-1, length=21, stop=1);
-	h0=zeros(length(x1),length(y1));
-	for k=1:21
-		for l=1:21
-			h0[k,l]=a0*x1[k]+b0*y1[l];
-		end
-	end
-end
-
-# ╔═╡ c3d123e4-e88f-46f6-99a8-4f57a934bd8b
-begin
-    wireframe(x1,y1,h0,
-		    size=(800,600),
-	        grid=false,
-		    zlim=(-5,5),
-	        title=L"z=αx+βy",
-		    xticks=([-1 0 1;],[-1,0,1]),
-		    yticks=([-1 0 1;],[-1,0,1]),
-		    zticks=([-5 -4 -3 -2 -1 0 1 2 3 4 5;],[-5,-4,-3,-2,-1,0,1,2,3,4,5]),
-		    xlabel="\$x\$",
-		    ylabel="\$y\$",
-	        #color=cgrad(:bwr),
-		    camera = (longitude0, latitude0))
-	scatter!([0],[0],[0],color=:magenta,label="Origin",markersize=4)
-end
 
 # ╔═╡ 22ef50ed-99c8-4363-8de9-3253995b71cf
 md"""
@@ -99,8 +65,8 @@ md"""
 begin
 	p1=a1;
 	q1=b1;
-	#k0=Int64(float(50*(a1+0.7))+15);
-	#l0=Int64(float(50*(b1+0.7))+15);
+	x1 = range(-1, length=21, stop=1);
+	y1 = range(-1, length=21, stop=1);
 	r1=1-a1^2-b1^2;
 	f1=zeros(length(x1),length(y1));
 	h1=zeros(length(x1),length(y1));
@@ -130,64 +96,6 @@ begin
 		     alpha=0.7, 
 	         colorbar=false)
 	scatter!([p1],[q1],[r1],color=:magenta,label="tangent point",markersize=4)
-end
-
-# ╔═╡ 147e9b2d-9149-40f9-a091-d4db86c85d58
-
-
-# ╔═╡ b52a7ba4-d26c-4973-ac65-d3c062381a0c
-md"""
-### Vector Fields on $\mathbb{R}^2$
-
-$\vec{v}(x,y)
-=
-\begin{bmatrix}
-v_1(x,y) \\ v_2(x,y)
-\end{bmatrix}
-:=
-\begin{bmatrix}
-a & b
-\\
-c & d
-\end{bmatrix}
-\begin{bmatrix}
-x \\ y
-\end{bmatrix}
-=
-\begin{bmatrix}
-ax+by \\ cx+dy
-\end{bmatrix}.$
-
-"""
-
-# ╔═╡ dcbaa68e-ab73-4973-a4a2-9f8e5f6641fd
-md"""
- a = $(@bind a11 Slider(-3:0.1:3, show_value=true, default=0)) 
- $nbsp
- b = $(@bind a12 Slider(-3:0.1:3, show_value=true, default=-1)) 
-
- c = $(@bind a21 Slider(-3:0.1:3, show_value=true, default=1)) 
- $nbsp
- d = $(@bind a22 Slider(-3:0.1:3, show_value=true, default=0)) 
-"""
-
-# ╔═╡ 17357173-3844-4412-8882-d2faf02f90cc
-begin
-xs = -2:0.2:2
-ys = -2:0.2:2
-
-df(x, y) = normalize([a11*x+a12*y, a21*x+a22*y]) ./ 10
-
-xxs = [x for x in xs for y in ys]
-yys = [y for x in xs for y in ys]
-
-quiver(xxs, yys, quiver=df, 
-	   title=L"(ax+by,cx+dy)",
-	   xlim=(-2,2),
-	   ylim=(-2,2),
-	　 xlabel=L"x",
-	   ylabel=L"y",
-	   aspect_ratio = :equal)
 end
 
 # ╔═╡ be1d8798-c5ec-48cb-96e7-c42bb31dba29
@@ -338,9 +246,6 @@ begin
 		   label=false,linewidth=1,linecolor=:black, linestyle =:dash)
 end
 
-# ╔═╡ 9d916a08-0b7a-48dc-a68f-5f947908d4bd
-
-
 # ╔═╡ 2a3e1a6d-bf0a-4ca5-80bd-5f4eb928f23f
 begin
 	N4=100;
@@ -354,133 +259,11 @@ begin
 	end
 end
 
-# ╔═╡ 4bd1098b-9048-46f6-af19-b6877775233b
-md"""
-### Newton's Method
-Given a smooth funtion 
-
-$f:\mathbb{R}^n\ni\vec{x}=[x_1,\dotsc,x_n]^T \mapsto f(\vec{x})\in\mathbb{R}$ 
-
-and an initial point $\vec{x}_0\in\mathbb{R}^n$, 
-Newton's method formally defines a sequence $\{\vec{x}_n\}_{n=1,2,3,\dotsc}$ by 
-
-$\vec{x}_{n+1}:=\vec{x}_n-\bigl(\nabla^2f(\vec{x}_n)\bigr)^{-1}{\nabla}f(\vec{x}_n), 
-\quad n=1,2,3,\dotsc.$
-
-This is used for finding a critical point $\vec{x}$ such that $\nabla{f}(\vec{x})=\vec{0}$. 
-"""
-
-# ╔═╡ 27cc7d0d-8e10-4592-bc86-a6807cb4afc3
-md"""
- $x_0$ = $(@bind a4 Slider(-1:0.1:1, show_value=true, default=0.8)) 
-
- $y_0$ = $(@bind b4 Slider(-1:0.1:1, show_value=true, default=0.8))
-
- $n$ = $(@bind n4 Slider(0:1:N4, show_value=true, default=0))
-"""
-
-# ╔═╡ 94fb423f-0da4-4c0f-ae3b-193de23d05e6
-begin
-	X4=zeros(N4+1,3);
-	X4[1,1]=a4;
-	X4[1,2]=b4;
-	X4[1,3]=2*a4^3+a4*b4^2+5*a4^2+b4^2;
-	for n=1:N4
-		D=12*X4[n,1]^2-2*X4[n,2]^2+22*X4[n,1]+10;
-		X4[n+1,1]=(12*X4[n,1]^3-2*X4[n,1]*X4[n,2]^2+21*X4[n,1]^2+X4[n,2]^2+9*X4[n,1])/D;
-		X4[n+1,2]=X4[n,2]*(12*X4[n,1]^2-X4[n,2]^2+17*X4[n,1]+5)/D;
-		X4[n+1,3]=2*X4[n+1,1]^3+X4[n+1,1]*X4[n+1,2]^2+5*X4[n+1,1]^2+X4[n+1,2]^2;
-	end
-end
-
-# ╔═╡ b6e08e59-2e93-426c-89c1-da9869c3535e
-begin
-    surface(x4,y4,f4,
-		    size=(600,600),
-	        grid=false,
-		    xlim=(-1.7,0.9),
-		    ylim=(-1.3,1.3),
-		    zlim=(0,9),
-			alpha=0.8, 
-	        title="\$z=2x^3+xy^2+5x^2+y^2\$",
-		    xticks=([-1 0 1;],[-1,0,1]),
-		    yticks=([-1 0 1;],[-1,0,1]),
-		    zticks=([0 5;],[0,5]),
-		    xlabel="\$x\$",
-		    ylabel="\$y\$",
-	        colormap=:jet,
-		    camera = (-20, 30),
-	        legend = :none)
-	scatter!([0],[0],[0],color=:orange,label=false,markersize=7)
-	scatter!([X4[1:n4+1,1]],[X4[1:n4+1,2]],[X4[1:n4+1,3]],color=:yellow,label=false,markersize=4)
-end
-
 # ╔═╡ bd8c13d8-d506-4f40-9298-dcd0d41497f0
 begin
 	N5=100;
 	for i=1:1
 	end
-end
-
-# ╔═╡ ce9141fc-0a73-4f75-8cbc-ce4188001094
-md"""
-### Gradient Descent
-Given a smooth funtion 
-
-$f:\mathbb{R}^n\ni\vec{x}=[x_1,\dotsc,x_n]^T \mapsto f(\vec{x})\in\mathbb{R}$ 
-
-and an initial point $\vec{x}_0\in\mathbb{R}^n$, 
-the Gradient descent defines a sequence $\{\vec{x}_n\}_{n=1,2,3,\dotsc}$ by 
-
-$\vec{x}_{n+1}:=\vec{x}_n-s{\nabla}f(\vec{x}_n), \quad n=1,2,3,\dotsc,$
-
-where $s=s_n>0$ is a small parameter called a step size or a learning rate, and can change at each $n$-th step. This is used for finding a critical point $\vec{x}$ such that $\nabla{f}(\vec{x})=\vec{0}$. 
-"""
-
-# ╔═╡ eb62437b-bdcf-4353-b79e-30850f21a37b
-md"""
- $s$ = $(@bind s5 Slider(0.01:0.01:0.2, show_value=true, default=0.05))
-
- $x_0$ = $(@bind a5 Slider(-1:0.1:1, show_value=true, default=0.8)) 
-
- $y_0$ = $(@bind b5 Slider(-1:0.1:1, show_value=true, default=0.8))
-
- $n$ = $(@bind n5 Slider(0:1:N5, show_value=true, default=0))
-"""
-
-# ╔═╡ 0029ed3e-594e-4a98-b790-212b43c62b07
-begin
-	X5=zeros(N5+1,3);
-	X5[1,1]=a5;
-	X5[1,2]=b5;
-	X5[1,3]=2*a5^3+a5*b5^2+5*a5^2+b5^2;
-	for n=1:N5
-		X5[n+1,1]=X5[n,1]-s5*(6*X5[n,1]^2+X5[n,2]^2+10*X5[n,1]);
-		X5[n+1,2]=X5[n,2]-s5*(2*X5[n,1]*X5[n,2]+2*X5[n,2]);
-		X5[n+1,3]=2*X5[n+1,1]^3+X5[n+1,1]*X5[n+1,2]^2+5*X5[n+1,1]^2+X5[n+1,2]^2;
-	end
-end
-
-# ╔═╡ 269237a6-fe05-4839-bf8f-990b23ab5c02
-begin
-    surface(x4,y4,f4,
-		    size=(600,600),
-	        grid=false,
-		    xlim=(-1.7,0.9),
-		    ylim=(-1.2,1.2),
-		    zlim=(0,9),
-    		alpha=0.7,
-	        title="\$z=2x^3+xy^2+5x^2+y^2\$",
-		    xticks=([-1 0 1;],[-1,0,1]),
-		    yticks=([-1 0 1;],[-1,0,1]),
-		    zticks=([0 5;],[0,5]),
-		    xlabel="\$x\$",
-		    ylabel="\$y\$",
-	        colormap=:jet,
-		    camera = (-20, 30),
-	        legend = :none)
-	scatter!([0],[0],[0],color=:orange,label=false,markersize=7)
-	scatter!([X5[1:n5+1,1]],[X5[1:n5+1,2]],[X5[1:n5+1,3]],color=:magenta,label=false,markersize=4)
 end
 
 # ╔═╡ 44ff650e-f21c-4e66-a1be-9a28c860eb54
@@ -720,7 +503,7 @@ TestImages = "~1.7.1"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.11.5"
+julia_version = "1.11.6"
 manifest_format = "2.0"
 project_hash = "d88f4c6502d78ad965bae9eb8f7191cde9c863c2"
 
@@ -2962,18 +2745,11 @@ version = "1.4.1+1"
 
 # ╔═╡ Cell order:
 # ╟─5ffc5ec0-f91f-11ec-0552-37ef5f25102d
-# ╟─3bb5a21a-90fe-44a5-b3e9-9c380e1d2dd9
-# ╟─edd96a98-2825-4149-aed5-a9d00767a65f
-# ╟─7abdbf5c-5ed2-41c8-8e37-64d80a3b4203
-# ╟─c3d123e4-e88f-46f6-99a8-4f57a934bd8b
+# ╟─0cb67d51-05bd-4182-aa5f-f2c8bc039a57
 # ╟─bdcefd34-2c55-4eea-aea3-54df8739d6ab
 # ╟─22ef50ed-99c8-4363-8de9-3253995b71cf
 # ╟─ebc4b499-b919-418f-a2ad-52b1b061982a
 # ╟─f6e03f57-4132-4e08-88b4-4c30efb68c89
-# ╟─147e9b2d-9149-40f9-a091-d4db86c85d58
-# ╟─b52a7ba4-d26c-4973-ac65-d3c062381a0c
-# ╟─dcbaa68e-ab73-4973-a4a2-9f8e5f6641fd
-# ╟─17357173-3844-4412-8882-d2faf02f90cc
 # ╟─be1d8798-c5ec-48cb-96e7-c42bb31dba29
 # ╟─0440bbe2-4865-4fd8-bb6d-5ec6d2eaa480
 # ╟─ca5f6714-8593-480f-8a2e-57cdb71cfcb9
@@ -2983,17 +2759,8 @@ version = "1.4.1+1"
 # ╟─1ec0ef68-2b28-485d-9a09-765984ae0f7e
 # ╟─4c217a39-1d98-4025-8eb1-6a1a7f1d0142
 # ╟─f044b5d4-8785-4cc2-9e0b-bd91fe962316
-# ╟─9d916a08-0b7a-48dc-a68f-5f947908d4bd
 # ╟─2a3e1a6d-bf0a-4ca5-80bd-5f4eb928f23f
-# ╟─94fb423f-0da4-4c0f-ae3b-193de23d05e6
-# ╟─4bd1098b-9048-46f6-af19-b6877775233b
-# ╟─27cc7d0d-8e10-4592-bc86-a6807cb4afc3
-# ╟─b6e08e59-2e93-426c-89c1-da9869c3535e
 # ╟─bd8c13d8-d506-4f40-9298-dcd0d41497f0
-# ╟─0029ed3e-594e-4a98-b790-212b43c62b07
-# ╟─ce9141fc-0a73-4f75-8cbc-ce4188001094
-# ╟─eb62437b-bdcf-4353-b79e-30850f21a37b
-# ╟─269237a6-fe05-4839-bf8f-990b23ab5c02
 # ╟─c16941ca-a975-443b-a277-a3b91b7a99b4
 # ╟─44ff650e-f21c-4e66-a1be-9a28c860eb54
 # ╟─c628098d-9052-4729-aabb-55fb4d0de037
