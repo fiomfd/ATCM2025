@@ -10,5 +10,5 @@ These notebooks deal with:
 - Data matrices 
 - Central limit theorem
 
-Some of these interactive notebook programs download public data and extract meaningful information.  
+Some of these interactive notebook programs download public data and extract meaningful information. We believe that such interactive notebooks suggest a mordern style of classes on data science including statistics. 
 
