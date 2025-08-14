@@ -17,6 +17,8 @@ In addition to the presentation materials, this repository provides selected int
 
 - **Calculus II**: tangent planes, Newton method and gradient descent, Riemann sum
 
+- **Data Analysis**: data vectors, data matrices, central limit theorem, and use of public data
+
 - **Linear Algebra**: grayscale and RGB images, SVD, Haar wavelet decomposition
 
 
