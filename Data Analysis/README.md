@@ -6,8 +6,7 @@ Here are some notebooks:
 - **Python & Jupyter Notebook**:  
 
 These notebooks deal with:
-- Data vectors
-- Data matrices 
+- Public data and visualization 
 - Central limit theorem
 
 Some programs in these interactive notebooks download public data and extract meaningful information. Such interactive notebooks might be one of mordern effective styles of classes on data science including statistics. 
