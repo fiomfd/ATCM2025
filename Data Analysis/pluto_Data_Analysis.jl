@@ -290,7 +290,7 @@ a \leqq \frac{S_n-pn}{\sqrt{np(1-p)}} \leqq b
 \quad
 (n \rightarrow \infty),$
 
-which is a typical example of the central limit theorem. We now observe this phenomenon for $p=0.1,0.9$. 
+which is a typical example of the central limit theorem. We now observe this phenomenon for $p=0.1,\dotsc,0.9$. 
 """
 
 # ╔═╡ 174c82bf-34bd-47e7-bb52-93307f29b47c
@@ -331,12 +331,7 @@ begin
 	    legend=:false,
 	    lw=2,
 	    color=:blue)
-	bar!(z1,
-		grid=false,
-	    edgecolor=:false, 
-	    legend=false,
-	    lw=0,
-	    color=:yellow)
+	　plot!(z1, seriestype=:shape, color=:yellow, alpha=0.6)
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
