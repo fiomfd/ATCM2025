@@ -17,14 +17,14 @@ In addition to the presentation materials, this repository provides selected int
 
 - **Calculus II**: tangent planes, Newton method and gradient descent, Riemann sum
 
-- **Data Analysis**: data vectors, data matrices, central limit theorem, and use of public data
+- **Data Analysis**: public data and visualization, central limit theorem, 
 
-- **Linear Algebra**: grayscale and RGB images, SVD, Haar wavelet decomposition
+- **Linear Algebra**: grayscale and RGB images and movies, SVD, Haar wavelet decomposition
 
 
 All examples are available in:
 - Julia + Pluto
-- Python + Jupyter Notebook
 - MATLAB Livescripts
+- Python + Jupyter Notebook
 
 These are intended to support active learning and can be used freely in classroom or self-study settings.
