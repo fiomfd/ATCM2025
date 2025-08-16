@@ -33,7 +33,7 @@ end
 # ╔═╡ fa6798fc-56aa-4053-b680-18840c30dd30
 md"""
 ### Data Analysis
-##### Hiroyuki Chihara (University of the Ryukyus, Okinawa Island, Japan)
+##### [Hiroyuki Chihara](https://fiomfd.github.io/) (University of the Ryukyus, Okinawa Island, Japan)
 
 1. Public data and visualization
 2. Central limit theorem
@@ -61,11 +61,11 @@ of 1884-present at the Hong Kong Observatory. The starting dates of  the theree 
 
 # ╔═╡ 77878c38-1f25-468d-af80-28a32beec5ea
 begin
-	download("https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMMAXT&rformat=csv&station=HKO","./CSV/HK_Maximun_Temperature.csv");
-	download("https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMMINT&rformat=csv&station=HKO","./CSV/HK_Minimum_Temperature.csv");
-	download("https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMTEMP&rformat=csv&station=HKO","./CSV/HK_Mean_Temperature.csv");
+	download("https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMMAXT&rformat=csv&station=HKO","HK_Maximun_Temperature.csv");
+	download("https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMMINT&rformat=csv&station=HKO","HK_Minimum_Temperature.csv");
+	download("https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMTEMP&rformat=csv&station=HKO","HK_Mean_Temperature.csv");
 
-　  Amax = CSV.read("./CSV/HK_Maximun_Temperature.csv", DataFrame, 
+　  Amax = CSV.read("HK_Maximun_Temperature.csv", DataFrame, 
 				 header=["Year", "Month", "Day", "Maximum", "C"],
 				 skipto=370,
 				 footerskip=3,
@@ -74,7 +74,7 @@ begin
 				 missingstring="***",
 				 normalizenames=true); 
 	delete!(Amax, 48579:nrow(Amax));
-	Amean = CSV.read("./CSV/HK_Mean_Temperature.csv", DataFrame, 
+	Amean = CSV.read("HK_Mean_Temperature.csv", DataFrame, 
 				 header=["Year", "Month", "Day", "Average", "C"],
 				 skipto=310,
 				 footerskip=3,
@@ -83,7 +83,7 @@ begin
 				 missingstring="***",
 				 normalizenames=true); 
 	delete!(Amean, 48579:nrow(Amean));
-	Amin = CSV.read("./CSV/HK_Minimum_Temperature.csv", DataFrame, 
+	Amin = CSV.read("HK_Minimum_Temperature.csv", DataFrame, 
 				 header=["Year", "Month", "Day", "Minimum", "C"],
 				 skipto=370,
 				 footerskip=3,
