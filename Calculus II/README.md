@@ -3,7 +3,7 @@
 Here are some notebooks: 
 - **Julia & Pluto**: pluto_Calculus_II.jl  [html](https://fiomfd.github.io/ATCM2025/pluto_Calculus_II.html)
 - **MATLAB livescript**: live_Calculus_II.mlx
-- **Python & Jupyter Notebook**:  
+- **Python & Jupyter Notebook**:  python_Calculus_II.ipynb
 
 These notebooks deal with:
 - Tangent planes of a graph of a function of two variables
