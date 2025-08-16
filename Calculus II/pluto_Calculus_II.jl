@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.13
+# v0.20.16
 
 using Markdown
 using InteractiveUtils
@@ -37,7 +37,7 @@ end
 # ╔═╡ 0cb67d51-05bd-4182-aa5f-f2c8bc039a57
 md"""
 ### Calculus II
-##### Hiroyuki Chihara (University of the Ryukyus, Okinawa Island, Japan)
+##### [Hiroyuki Chihara](https://fiomfd.github.io/) (University of the Ryukyus, Okinawa Island, Japan)
 
 1. Tangent planes
 2. Polar coordinates
@@ -1538,7 +1538,7 @@ uuid = "4b2f31a3-9ecc-558c-b454-b3730dcb73e9"
 version = "2.40.1+0"
 
 [[deps.Librsvg_jll]]
-deps = ["Artifacts", "JLLWrappers", "Libdl", "Pango_jll", "Pkg", "gdk_pixbuf_jll"]
+deps = ["Artifacts", "JLLWrappers", "Libdl", "Pango_jll", "Pkg", "XML2_jll", "gdk_pixbuf_jll"]
 git-tree-sha1 = "ae0923dab7324e6bc980834f709c4cd83dd797ed"
 uuid = "925c91fb-5dd6-59dd-8e8c-345e74382d89"
 version = "2.54.5+0"
