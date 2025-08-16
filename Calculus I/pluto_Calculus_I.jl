@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.13
+# v0.20.16
 
 using Markdown
 using InteractiveUtils
@@ -401,7 +401,7 @@ begin
 	f5=sin.(2*pi*x5)+x5+1.3*ones(501);
 	
 	g5=zeros(501);
-	for j=1:500
+	for j=2:500
 		g5[j]=f5[Int64(floor(floor(n5*j/501)*501/2/n5)+ceil(ceil(n5*j/501)*501/2/n5))];
 	end
 end
@@ -420,7 +420,8 @@ begin
 	    legend=false,
 	    lw=3,
 	    color=:magenta)
-	bar!(g5,lw=0,color=:blue)
+	#bar!(g5,lw=0,color=:blue)
+	plot!(g5, seriestype=:shape, color=:yellow, alpha=0.6)
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
