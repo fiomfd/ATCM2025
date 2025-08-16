@@ -3,7 +3,7 @@
 Here are some notebooks using CityU.jpg: 
 - **Julia & Pluto**: pluto_matrix_and_data.jl  [html](https://fiomfd.github.io/ATCM2025/pluto_matrix_and_data.html)
 - **MATLAB livescript**: live_matrix_and_data.mlx
-- **Python & Jupyter Notebook**:  
+- **Python & Jupyter Notebook**:  python_matrix_and_data.ipynb
 
 These notebooks demonstrate:
 - Representation of data using matrices
