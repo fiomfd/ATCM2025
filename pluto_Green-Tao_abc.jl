@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.13
+# v0.20.16
 
 using Markdown
 using InteractiveUtils
@@ -45,11 +45,11 @@ ABSTRACT: We present a hands-on example of computational thinking at the interse
 md"""
 ### About me
 
-- A mathematician working on microlocal analysis in integral geometry (cf. X-ray transform and CT scanners).
+- A mathematician working on microlocal analysis in integral geometry (e.g. X-ray transform and CT scanners).
 
-- A beginner in applied mathematics and programming languages Julia/MATLAB (2020-).
+- A newcommer to applied mathematics and programming languages Julia/MATLAB, which I started doing recreationally in 2020.
 
-- Being inspred by the MIT course on computational thinking, I am working on modernizing and visualizing the contents of my mathematics classes. 
+- Inspired by MIT's Computational Thinking course, I have been modernizing and visualizing the content of my mathematics classes.
 """
 
 # ╔═╡ 31213987-bb48-469c-83d4-e768fa21f599
@@ -376,8 +376,6 @@ Pluto/Julia/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ATC
 
 - Julia & Pluto.jl file used for this presentation
 
-- Julia & Jupyter notebook file exploring examples
-
 - MATLAB livescript file exploring examples
 
 - Python & Jupyter notebook file exploring examples
@@ -385,6 +383,8 @@ Pluto/Julia/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ATC
 - Mathematica file exploring examples
 
 ###### **Note**: *GeoGebra cannot deal with* $\pi(x)$ *and* $\text{rad}$.
+
+Notebooks for Calculus I, Calculus II, Linear Algebra, and Data Analysis are also available.  
 """
 
 # ╔═╡ a06de734-c4ac-440b-80e6-589760608ae5
