@@ -6,7 +6,7 @@ This repository provides some interactive notebooks related to the presentation 
   
 - **MATLAB livescript**: live_Green-Tao_abc.mlx 
 
-- **Python + Jupyter Notebook**: python_Green-Tao_abc.mlx 
+- **Python + Jupyter Notebook**: python_Green-Tao_abc.ipynb
 
 - **Mathematica**: mathematica_Green-Tao_abc.nb
 
