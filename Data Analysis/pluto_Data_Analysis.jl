@@ -104,28 +104,14 @@ Julia computes the annual maximum, average, and minmum temperatures, and shows t
 
 # ╔═╡ 1673ec7e-aa4e-479c-8df3-632f9bc48fc8
 begin
-	Amat=Matrix(A);
-	AA=Amat[20089:48578,4:6];
-	B=zeros(78,3);
-	X=zeros(78,1);
-	L=0;
-	for i=1:78
-		if (mod(1946 + i, 4) == 0 && mod(1946 + i, 100) != 0) || mod(1946 + i, 400) == 0
-        B[i,1]=maximum(AA[L+1:L+366,1]);
-        B[i,2]=mean(AA[L+1:L+366,2]);
-        B[i,3]=minimum(AA[L+1:L+366,3]);
-        L=L+366;
-        X[i,1]=1946+i;
-        else
-        B[i,1]=maximum(AA[L+1:L+365,1]);
-        B[i,2]=mean(AA[L+1:L+365,2]);
-        B[i,3]=minimum(AA[L+1:L+365,3]);
-        L=L+365;
-        X[i,1]=1946+i;
-        end
-	end
+	A_1947_2024 = filter(:Year => y -> 1947 <= y <= 2024, A);
+	Y = combine(groupby(A_1947_2024, :Year),
+    :Maximum => maximum => :Ymax,
+    :Average => mean     => :Yavg,
+    :Minimum => minimum  => :Ymin
+		)
 
-	plot([B[:,1],B[:,2],B[:,3]],
+	plot(Matrix(Y)[:,2:4],
 		 title="Annual max, ave, and min temperatures at HK Observatory",
 		 titlefontsize=12,
 		 titlefontcolor="blue",
@@ -139,107 +125,6 @@ begin
 		 legend=false)
 end
 
-# ╔═╡ 4f491d21-5270-43d2-b74f-92bc0f72adda
-begin
-	Bmax=zeros(78,12);
-	Bmean=zeros(78,12);
-	Bmin=zeros(78,12);
-	M=0;
-
-	for i=1:78
-        if (mod(1946+i,4)==0 && mod(1946+i,100)!=0) || mod(1946+i,400)==0
-        # leap year
-		# January 
-        Bmax[i,1]=maximum(AA[M+1:M+31,1]);
-        Bmean[i,1]=mean(AA[M+1:M+31,2]);
-        Bmin[i,1]=minimum(AA[M+1:M+31,3]);
-        # February
-        Bmax[i,2]=maximum(AA[M+32:M+60,1]);
-        Bmean[i,2]=mean(AA[M+32:M+60,2]);
-        Bmin[i,2]=minimum(AA[M+32:M+60,3]);
-        # March
-        Bmax[i,3]=maximum(AA[M+61:M+91,1]);
-        Bmean[i,3]=mean(AA[M+61:M+91,2]);
-        Bmin[i,3]=minimum(AA[M+61:M+91,3]);
-        # April
-        Bmax[i,4]=maximum(AA[M+92:M+121,1]);
-        Bmean[i,4]=mean(AA[M+92:M+121,2]);
-        Bmin[i,4]=minimum(AA[M+92:M+121,3]);
-        # May
-        Bmax[i,5]=maximum(AA[M+122:M+152,1]);
-        Bmean[i,5]=mean(AA[M+122:M+152,2]);
-        Bmin[i,5]=minimum(AA[M+122:M+152,3]);
-        # June
-        Bmax[i,6]=maximum(AA[M+153:M+182,1]);
-        Bmean[i,6]=mean(AA[M+153:M+182,2]);
-        Bmin[i,6]=minimum(AA[M+153:M+182,3]);
-        # July
-        Bmax[i,7]=maximum(AA[M+183:M+213,1]);
-        Bmean[i,7]=mean(AA[M+183:M+213,2]);
-        Bmin[i,7]=minimum(AA[M+183:M+213,3]);
-        # August
-        Bmax[i,8]=maximum(AA[M+214:M+244,1]);
-        Bmean[i,8]=mean(AA[M+214:M+244,2]);
-        Bmin[i,8]=minimum(AA[M+214:M+244,3]);
-        # September
-        Bmax[i,9]=maximum(AA[M+245:M+274,1]);
-        Bmean[i,9]=mean(AA[M+245:M+274,2]);
-        Bmin[i,9]=minimum(AA[M+245:M+274,3]);
-        # October
-        Bmax[i,10]=maximum(AA[M+275:M+305,1]);
-        Bmean[i,10]=mean(AA[M+275:M+305,2]);
-        Bmin[i,10]=minimum(AA[M+275:M+305,3]);
-        # November
-        Bmax[i,11]=maximum(AA[M+306:M+335,1]);
-        Bmean[i,11]=mean(AA[M+306:M+335,2]);
-        Bmin[i,11]=minimum(AA[M+306:M+335,3]);
-        # December
-        Bmax[i,12]=maximum(AA[M+336:M+366,1]);
-        Bmean[i,12]=mean(AA[M+336:M+366,2]);
-        Bmin[i,12]=minimum(AA[M+336:M+366,3]);
-        M=M+366;
-        else
-        Bmax[i,1]=maximum(AA[M+1:M+31,1]);
-        Bmean[i,1]=mean(AA[M+1:M+31,2]);
-        Bmin[i,1]=minimum(AA[M+1:M+31,3]);
-        Bmax[i,2]=maximum(AA[M+32:M+59,1]);
-        Bmean[i,2]=mean(AA[M+32:M+59,2]);
-        Bmin[i,2]=minimum(AA[M+32:M+59,3]);
-        Bmax[i,3]=maximum(AA[M+60:M+90,1]);
-        Bmean[i,3]=mean(AA[M+60:M+90,2]);
-        Bmin[i,3]=minimum(AA[M+60:M+90,3]);
-        Bmax[i,4]=maximum(AA[M+91:M+120,1]);
-        Bmean[i,4]=mean(AA[M+91:M+120,2]);
-        Bmin[i,4]=minimum(AA[M+91:M+120,3]);
-        Bmax[i,5]=maximum(AA[M+121:M+151,1]);
-        Bmean[i,5]=mean(AA[M+121:M+151,2]);
-        Bmin[i,5]=minimum(AA[M+121:M+151,3]);
-        Bmax[i,6]=maximum(AA[M+152:M+181,1]);
-        Bmean[i,6]=mean(AA[M+152:M+181,2]);
-        Bmin[i,6]=minimum(AA[M+152:M+181,3]);
-        Bmax[i,7]=maximum(AA[M+182:M+212,1]);
-        Bmean[i,7]=mean(AA[M+182:M+212,2]);
-        Bmin[i,7]=minimum(AA[M+182:M+212,3]);
-        Bmax[i,8]=maximum(AA[M+213:M+243,1]);
-        Bmean[i,8]=mean(AA[M+213:M+243,2]);
-        Bmin[i,8]=minimum(AA[M+213:M+243,3]);
-        Bmax[i,9]=maximum(AA[M+244:M+273,1]);
-        Bmean[i,9]=mean(AA[M+244:M+273,2]);
-        Bmin[i,9]=minimum(AA[M+244:M+273,3]);
-        Bmax[i,10]=maximum(AA[M+274:M+304,1]);
-        Bmean[i,10]=mean(AA[M+274:M+304,2]);
-        Bmin[i,10]=minimum(AA[M+274:M+304,3]);
-        Bmax[i,11]=maximum(AA[M+305:M+334,1]);
-        Bmean[i,11]=mean(AA[M+305:M+334,2]);
-        Bmin[i,11]=minimum(AA[M+305:M+334,3]);
-        Bmax[i,12]=maximum(AA[M+335:M+365,1]);
-        Bmean[i,12]=mean(AA[M+335:M+365,2]);
-        Bmin[i,12]=minimum(AA[M+335:M+365,3]);
-        end
-	end
-
-end
-
 # ╔═╡ cc66ede6-905e-4d4e-bc92-6a943cf28004
 md"""
 Moreover, Julia computes the monthy maximum, average, and minmum temperatures, and shows the line graphs in each year. Choose the year using the slider. 
@@ -249,7 +134,15 @@ year = $(@bind yy Slider(1947:1:2024, show_value=true, default=1947))
 
 # ╔═╡ ebcd92dc-4b54-4704-a6b0-49cc4874ffc0
 begin
-	plot([Bmax[yy-1946,:],Bmean[yy-1946,:],Bmin[yy-1946,:]],
+	M = combine(groupby(A_1947_2024, [:Year, :Month]),
+    :Maximum => maximum => :Mmax,
+    :Average => mean    => :Mavg,
+    :Minimum => minimum => :Mmin
+		)
+	
+	Myy = sort(M[M.Year .== yy, :], :Month) 
+	
+	plot(Matrix(Myy[:,3:5]),
 		 title="Monthly max, ave, and min temperatures at HK Observatory",
 		 titlefontsize=12,
 		 titlefontcolor="blue",
@@ -321,6 +214,7 @@ end
 # ╔═╡ 7b34916d-8ab9-4157-a5fd-9f45fb2915ef
 begin
     plot(f1,
+		title=(L"B(n,p) \rightarrow N(0,1)"),
 	    grid=false,
 		ylim=(0,0.45),
 	    xticks=([201 401 601 801 1001;],[-2,-1,0,1,2]),
@@ -1997,7 +1891,6 @@ version = "1.4.1+0"
 # ╟─77878c38-1f25-468d-af80-28a32beec5ea
 # ╟─4dbf41ba-9813-4011-8c18-1cc9312d4800
 # ╟─1673ec7e-aa4e-479c-8df3-632f9bc48fc8
-# ╟─4f491d21-5270-43d2-b74f-92bc0f72adda
 # ╟─cc66ede6-905e-4d4e-bc92-6a943cf28004
 # ╟─ebcd92dc-4b54-4704-a6b0-49cc4874ffc0
 # ╟─e68a6671-5907-4346-8310-92bebd546660
