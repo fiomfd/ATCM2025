@@ -375,16 +375,20 @@ md"""
 Pluto/Julia/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ATCM2025](https://github.com/fiomfd/ACTM2025).
 
 - Julia & Pluto.jl file used for this presentation
-
 - MATLAB livescript file exploring examples
-
-- Python & Jupyter notebook file exploring examples
-
+- Python & Jupyter Notebook file exploring examples
 - Mathematica file exploring examples
 
 ###### **Note**: *GeoGebra cannot deal with* $\pi(x)$ *and* $\text{rad}$.
+######
 
-Notebooks for Calculus I, Calculus II, Linear Algebra, and Data Analysis are also available.  
+Interactive notebooks for other topics are available: 
+- Calculus I
+- Calculus II
+- Data Analysis
+- Linear Algebra
+
+###### Big thanks to ChatGPT, who did the majority of the Python programming.
 """
 
 # ╔═╡ a06de734-c4ac-440b-80e6-589760608ae5
