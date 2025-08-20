@@ -23,7 +23,7 @@ In addition to the presentation materials, this repository provides selected int
 
 All examples are available in:
 - Julia + Pluto
-- MATLAB Livescripts
+- MATLAB Livescript
 - Python + Jupyter Notebook
 
 These are intended to support active learning and can be used freely in classroom or self-study settings.
