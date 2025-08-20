@@ -21,11 +21,11 @@ In addition to the presentation materials, this repository provides selected int
 
 - **Linear Algebra**: grayscale and RGB images and movies, SVD, Haar wavelet decomposition
 
-**Big thanks to ChatGPT, who did the majority of the Python programming.**
-
 All examples are available in:
 - Julia + Pluto
 - MATLAB Livescripts
 - Python + Jupyter Notebook
 
 These are intended to support active learning and can be used freely in classroom or self-study settings.
+
+**Big thanks to ChatGPT, who did the majority of the Python programming.**
