@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.16
+# v0.20.14
 
 using Markdown
 using InteractiveUtils
@@ -47,7 +47,7 @@ md"""
 
 - A mathematician working on microlocal analysis in integral geometry (e.g. X-ray transform and CT scanners).
 
-- A newcommer to applied mathematics and programming languages Julia/MATLAB, which I started doing recreationally in 2020.
+- A newcomer to applied mathematics and programming languages Julia/MATLAB, which I started doing recreationally in 2020.
 
 - Inspired by MIT's Computational Thinking course, I have been modernizing and visualizing the content of my mathematics classes.
 """
