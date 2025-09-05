@@ -26,9 +26,6 @@ All examples are available in:
 - MATLAB Livescript
 - Python + Jupyter Notebook
 
-These are intended to support active learning and can be used freely in classroom or self-study settings.
+These are intended to support active learning and can be used freely in classroom or self-study settings. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fiomfd/ATCM2025/)
 
 **Big thanks to ChatGPT, who did the majority of the Python programming.**
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fiomfd/ATCM2025/)
-
