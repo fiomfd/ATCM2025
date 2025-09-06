@@ -30,12 +30,12 @@ These are intended to support active learning and can be used freely in classroo
 
 If you have a Google account, you can use Python + Jupyter Notebook at [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fiomfd/ATCM2025/). Python is **NOT** required in your computer. 
 
-**How to use  Python + Jupyter Notebook at Google Colab**
+#### How to use  Python + Jupyter Notebook at Google Colab
 - Import packages: Tap [ ].
 <img src="data/colab-1.jpg" width="500">
 
 - Run code and use slider: Tap [ ], and touch the slider. 
 <img src="data/colab-2.jpg" width="750">
 
-
-**Big thanks to ChatGPT, who did the majority of the Python programming.**
+####
+#### Big thanks to ChatGPT, who did the majority of the Python programming.\
