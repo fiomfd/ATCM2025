@@ -26,6 +26,7 @@ All examples are available in:
 - MATLAB Livescript
 - Python + Jupyter Notebook
 
+####
 These are intended to support active learning and can be used freely in classroom or self-study settings. 
 
 If you have a Google account, you can use Python + Jupyter Notebook at [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fiomfd/ATCM2025/). Python is **NOT** required in your computer. 
