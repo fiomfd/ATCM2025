@@ -17,7 +17,7 @@ In addition to the presentation materials, this repository provides selected int
 
 - **Calculus II**: tangent planes, 2D and 3D polar coordinates, Newton's method vs gradient descent, Riemann sum
 
-- **Data Analysis**: public data and visualization, central limit theorem, 
+- **Data Analysis**: public data (HK Observatory) and visualization, central limit theorem
 
 - **Linear Algebra**: grayscale and RGB images, grayscale and RGB movies, SVD and low rank approximation, Haar wavelet decomposition
 
