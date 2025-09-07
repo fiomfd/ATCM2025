@@ -391,9 +391,30 @@ Interactive notebooks for other topics are available:
 ###### Big thanks to ChatGPT, who did the majority of the Python programming.
 """
 
-# ╔═╡ a06de734-c4ac-440b-80e6-589760608ae5
+# ╔═╡ 6b7bb679-7289-4180-9951-fa3fcee43e19
 begin
-	QR=load("QR_ATCM2025.png");
+	load("QR_ATCM2025.png");
+end
+
+# ╔═╡ a7d6aa2b-2a7e-4a04-8a82-7ea0f215a4ff
+
+
+# ╔═╡ 8358cc78-e501-4ab2-9c6a-cf99bc89c906
+md"""
+#### Jupyter Notebook at Google Colab 
+[https://colab.research.google.com/github/fiomfd/ATCM2025/](https://colab.research.google.com/github/fiomfd/ATCM2025/)
+
+**You can run all the above Jupyter Notebooks of Python on the web.**
+####
+#### Try it now on your laptop, tablet or mobile phone!
+####
+**Your Google ID is required. No installation is required.**
+
+"""
+
+# ╔═╡ 184019c2-85d9-4dc4-ae0c-820e659f95bd
+begin
+	load("QR_Colab.png");
 end
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -2587,6 +2608,9 @@ version = "1.9.2+0"
 # ╟─5f5c69ac-247f-4a7c-b219-6962f398b7e1
 # ╟─9348893d-4c0e-40e3-8d83-5579474ac321
 # ╟─743944e4-83ad-44e6-afe7-91affeb4b965
-# ╟─a06de734-c4ac-440b-80e6-589760608ae5
+# ╟─6b7bb679-7289-4180-9951-fa3fcee43e19
+# ╟─a7d6aa2b-2a7e-4a04-8a82-7ea0f215a4ff
+# ╟─8358cc78-e501-4ab2-9c6a-cf99bc89c906
+# ╟─184019c2-85d9-4dc4-ae0c-820e659f95bd
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
