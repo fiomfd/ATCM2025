@@ -1,4 +1,4 @@
-### ATCM 2025
+ï### ATCM 2025
 
 This repository provides some interactive notebooks related to the presentation titled "*Computational explorations in modern number theory: the Green–Tao theorem and the abc conjecture*" by [Hiroyuki Chihara](https://fiomfd.github.io/) at [ATCM 2025](https://atcm.mathandtech.org/). [Here is a handout](https://fiomfd.github.io/pdf/ATCM2025_handout.pdf).
 
@@ -33,10 +33,10 @@ If you have a Google account, you can use Python + Jupyter Notebook at [![Google
 
 #### How to use  Python + Jupyter Notebook at Google Colab
 - Import packages.
-<img src="data/colab-1.jpg" width="750">
+%<img src="data/colab-1.jpg" width="750">
 
 - Run code and use slider.
-<img src="data/colab-2.jpg" width="750">
+%<img src="data/colab-2.jpg" width="750">
 
 ####
 #### Big thanks to ChatGPT, who did the majority of the Python programming.
