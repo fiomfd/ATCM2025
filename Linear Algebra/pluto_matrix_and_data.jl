@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.16
+# v0.20.18
 
 using Markdown
 using InteractiveUtils
@@ -35,6 +35,7 @@ begin
 	using DSP
 	using Primes
     using DataFrames
+	using Downloads
 end
 
 # ╔═╡ 4fc5029e-1e90-408d-b5c6-c563918ae660
@@ -317,8 +318,7 @@ We compute $384\times512\times3$ RGB image of fried noodle at a canteen, City Un
 # ╔═╡ 789e78db-4f6a-4f7a-bba0-8ab119d3f1fb
 begin
 # read image, resize, decompose
-	#I=load("./material/char_kway_teow.jpg");
-	#X=imresize(I, ratio=1/4);
+	Downloads.download("https://raw.githubusercontent.com/fiomfd/ATCM2025/refs/heads/main/data/CityU.jpg", "CityU.jpg")
 	I=load("./CityU.jpg");
 	X=imresize(I, ratio=1/8);	
     (p,q)=size(X);
@@ -788,6 +788,7 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 Colors = "5ae59095-9a9b-59fe-a467-6f913c188581"
 DSP = "717857b8-e6f2-59f4-9121-6e50c889abd2"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
 Formatting = "59287772-0a20-5a39-b81b-1366585eb4c0"
 ImageFiltering = "6a3955dd-da59-5b1f-98d4-e7296123deb5"
 ImageMagick = "6218d12a-5da1-5696-b52f-db25d2ecc6d1"
@@ -828,7 +829,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.11.6"
 manifest_format = "2.0"
-project_hash = "2369b160e8bdc163763075b5a301f9eb88dba1ca"
+project_hash = "4d4bab94c0e768aeb037323b02a69f1c7b53662f"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
