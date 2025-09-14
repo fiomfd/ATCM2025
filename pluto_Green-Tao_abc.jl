@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.17
+# v0.20.18
 
 using Markdown
 using InteractiveUtils
@@ -28,6 +28,7 @@ begin
 	using ImageView
 	using Plots
 	using LinearAlgebra
+	using Downloads
 end
 
 # ╔═╡ dcec0170-5f16-489d-8cd4-e15b8c8558fa
@@ -393,6 +394,7 @@ Interactive notebooks for other topics are available:
 
 # ╔═╡ 6b7bb679-7289-4180-9951-fa3fcee43e19
 begin
+	Downloads.download("https://raw.githubusercontent.com/fiomfd/ATCM2025/refs/heads/main/data/QR_ATCM2025.png","QR_ATCM2025.png")
 	load("QR_ATCM2025.png");
 end
 
@@ -414,6 +416,7 @@ md"""
 
 # ╔═╡ 184019c2-85d9-4dc4-ae0c-820e659f95bd
 begin
+	Downloads.download("https://raw.githubusercontent.com/fiomfd/ATCM2025/refs/heads/main/data/QR_Colab.png","QR_Colab.png")
 	load("QR_Colab.png");
 end
 
@@ -422,6 +425,7 @@ PLUTO_PROJECT_TOML_CONTENTS = """
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
+Downloads = "f43a241f-c20a-4ad4-852c-f6b1247861c6"
 ImageView = "86fae568-95e7-573e-a6b2-d8a6b900c9ef"
 Images = "916415d5-f1e6-5110-898d-aaa5f9f070e0"
 InvertedIndices = "41ab1584-1d38-5bbf-9106-f11c6c58b48f"
@@ -449,7 +453,7 @@ PLUTO_MANIFEST_TOML_CONTENTS = """
 
 julia_version = "1.11.6"
 manifest_format = "2.0"
-project_hash = "204d600b9e41bc09322de65a25931a11c490c572"
+project_hash = "ad6675cead0c9ab482464e29afbc3c60ce2ab45c"
 
 [[deps.AbstractFFTs]]
 deps = ["LinearAlgebra"]
