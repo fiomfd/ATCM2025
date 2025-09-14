@@ -36,7 +36,7 @@ If you have a Google account, you can use Python + Jupyter Notebook at [![Google
 <img src="data/colab-1.jpg" width="750">
 
 - Run code and use slider.
-
+<img src="data/colab-2.jpg" width="750">
 
 ####
 #### Big thanks to ChatGPT, who did the majority of the Python programming.
