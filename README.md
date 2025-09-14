@@ -33,7 +33,7 @@ If you have a Google account, you can use Python + Jupyter Notebook at [![Google
 
 #### How to use  Python + Jupyter Notebook at Google Colab
 - Import packages: Tap [ ].
-<img src="data/colab-1.jpg" width="500">
+<img src="data/colab-1.jpg" width="750">
 
 - Run code and use slider: Tap [ ], and touch the slider. 
 <img src="data/colab-2.jpg" width="750">
