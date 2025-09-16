@@ -1,4 +1,4 @@
-ï### ATCM 2025
+### ATCM 2025
 
 This repository provides some interactive notebooks related to the presentation titled "*Computational explorations in modern number theory: the Green–Tao theorem and the abc conjecture*" by [Hiroyuki Chihara](https://fiomfd.github.io/) at [ATCM 2025](https://atcm.mathandtech.org/). [Here is a handout](https://fiomfd.github.io/pdf/ATCM2025_handout.pdf).
 
