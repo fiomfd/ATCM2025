@@ -369,6 +369,64 @@ end
 # ╔═╡ 9348893d-4c0e-40e3-8d83-5579474ac321
 
 
+# ╔═╡ fa039738-e60b-468b-9630-a6c2ee781c1a
+md"""
+### The Collatz conjecture
+
+Generate a sequence $\{a[n]\}_{n=1}^\infty$ by the following process:
+1. Given an arbitrary positive integer $m$, set $a[1]:=m$. 
+2. For $n=2,3,4,\dotsc$, if $a[n-1]:=1$, stop the process, otherwise 
+
+$a[n]:=\dfrac{a[n-1]}{2}\quad (a[n-1]\ \text{is even}),
+\qquad
+a[n]:=3a[n-1]+1\quad (a[n-1]\ \text{is odd}).$
+
+In 1937 Lothar Collatz introduce the following conjecture:
+
+##### For any $m=1,2,3,\dotsc$, there exists $n_m=1,2,3,\dotsc$ such that $a[n_m]=1$.
+#####
+
+See [this paper](https://doi.org/10.1080/00029890.1985.11971528) for instance. Here are some examples: 
+
+$1,
+\quad 
+2\rightarrow1, \quad 3\rightarrow10\rightarrow16\rightarrow8\rightarrow4\rightarrow2\rightarrow1, 
+\quad
+4\rightarrow2\rightarrow1, 
+\quad\dotsc$
+
+We examine this conjecture for $m=1,2,3,\dotsc,500$.
+
+a[1]:= m = $(@bind m Slider(1:1:500, show_value=true, default=1)) 
+
+"""
+
+# ╔═╡ 1893ba34-2a2a-494c-bc9d-d049712ffa78
+begin
+	x=ones(Int64,100)
+    x[1]=m
+for n=2:100
+    if x[n-1]==1
+       x[n]=x[n]
+    else
+        if mod(x[n-1],2)==0
+            x[n]=Int64.(x[n-1]/2)
+        else x[n]=3*x[n-1]+1
+        end
+    end
+end
+	scatter(x,
+		 ylim=(1,500),
+		 title="The Collatz conjecrue is true?",
+		 xlabel=L"n",
+		 ylabel=L"a[n]",
+		 legend=false)
+
+end
+
+# ╔═╡ cc879f40-6f9e-4afe-8096-bffc1150ad16
+
+
 # ╔═╡ 743944e4-83ad-44e6-afe7-91affeb4b965
 md"""
 #### GitHub
@@ -2611,6 +2669,9 @@ version = "1.9.2+0"
 # ╟─96d2b74a-56a6-4599-8da5-bc505374cd2a
 # ╟─5f5c69ac-247f-4a7c-b219-6962f398b7e1
 # ╟─9348893d-4c0e-40e3-8d83-5579474ac321
+# ╟─fa039738-e60b-468b-9630-a6c2ee781c1a
+# ╟─1893ba34-2a2a-494c-bc9d-d049712ffa78
+# ╟─cc879f40-6f9e-4afe-8096-bffc1150ad16
 # ╟─743944e4-83ad-44e6-afe7-91affeb4b965
 # ╟─6b7bb679-7289-4180-9951-fa3fcee43e19
 # ╟─a7d6aa2b-2a7e-4a04-8a82-7ea0f215a4ff
