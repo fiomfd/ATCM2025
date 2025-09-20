@@ -419,7 +419,8 @@ end
 		 ylim=(1,500),
 		 title="The Collatz conjecrue is true?",
 		 xlabel=L"n",
-		 ylabel=L"a[n]",
+		 ylabel=L"x[n]",
+		 xticks=([1,20,40,60,80,100]),
 		 legend=false)
 
 end
