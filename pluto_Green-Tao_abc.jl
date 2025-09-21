@@ -373,13 +373,13 @@ end
 md"""
 ### The Collatz conjecture
 
-Generate a sequence $\{a[n]\}_{n=1}^\infty$ by the following process:
-1. Given an arbitrary positive integer $m$, set $a[1]:=m$. 
-2. For $n=2,3,4,\dotsc$, if $a[n-1]:=1$, stop the process, otherwise 
+Generate a sequence $\{x[n]\}_{n=1}^\infty$ by the following process:
+1. Given an arbitrary positive integer $m$, set $x[1]:=m$. 
+2. For $n=2,3,4,\dotsc$, if $x[n-1]:=1$, stop the process, otherwise 
 
-$a[n]:=\dfrac{a[n-1]}{2}\quad (a[n-1]\ \text{is even}),
+$x[n]:=\dfrac{x[n-1]}{2}\quad (x[n-1]\ \text{is even}),
 \qquad
-a[n]:=3a[n-1]+1\quad (a[n-1]\ \text{is odd}).$
+x[n]:=3x[n-1]+1\quad (x[n-1]\ \text{is odd}).$
 
 In 1937 Lothar Collatz introduce the following conjecture:
 
