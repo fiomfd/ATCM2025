@@ -38,7 +38,7 @@ md"""
 #####
 ##### [ATCM](https://atcm.mathandtech.org/) 2025, 13-16 December 2025, [Ateneo de Manila University](https://www.ateneo.edu/)
 #####
-ABSTRACT: We present a hands-on example of computational thinking at the intersection of mathematics and programming. Leveraging the Julia programming language and its Pluto.jl notebook environment, we visualize computational explorations inspired by two central themes in modern number theory: the Green–Tao theorem and the abc conjecture. By combining built-in primality tests with compact code in Julia, Python, MATLAB, and Mathematica, we generate long arithmetic sequences of primes and enumerate abc-triplets with unusually small radical values. Our educational objective is to help students experience the scale and subtlety of modern number-theoretic phenomena through interactive and reproducible computation.
+ABSTRACT: We present a hands-on example of computational thinking at the intersection of mathematics and programming. Leveraging the Julia programming language and its Pluto.jl notebook environment, we visualize computational explorations inspired by two central themes in modern number theory: the Green–Tao theorem, the abc conjecture, and the Collatz conjecture. By combining built-in primality tests with compact code in Julia, Python, MATLAB, and Mathematica, we generate long arithmetic sequences of primes and enumerate abc-triplets with unusually small radical values. Our educational objective is to help students experience the scale and subtlety of modern number-theoretic phenomena through interactive and reproducible computation.
 
 """
 
@@ -383,8 +383,8 @@ a[n]:=3a[n-1]+1\quad (a[n-1]\ \text{is odd}).$
 
 In 1937 Lothar Collatz introduce the following conjecture:
 
-##### For any $m=1,2,3,\dotsc$, there exists $n_m=1,2,3,\dotsc$ such that $a[n_m]=1$.
-#####
+###### For any $m=1,2,3,\dotsc$, there exists $n_m=1,2,3,\dotsc$ such that $x[n_m]=1$.
+######
 
 See [this paper](https://doi.org/10.1080/00029890.1985.11971528) for instance. Here are some examples: 
 
@@ -397,15 +397,15 @@ $1,
 
 We examine this conjecture for $m=1,2,3,\dotsc,500$.
 
-a[1]:= m = $(@bind m Slider(1:1:500, show_value=true, default=1)) 
+x[1]:= m = $(@bind m Slider(1:1:500, show_value=true, default=1)) 
 
 """
 
 # ╔═╡ 1893ba34-2a2a-494c-bc9d-d049712ffa78
 begin
-	x=ones(Int64,100)
+	x=ones(Int64,140)
     x[1]=m
-for n=2:100
+for n=2:140
     if x[n-1]==1
        x[n]=x[n]
     else
@@ -420,9 +420,40 @@ end
 		 title="The Collatz conjecrue is true?",
 		 xlabel=L"n",
 		 ylabel=L"x[n]",
-		 xticks=([1,20,40,60,80,100]),
+		 xticks=([1,20,40,60,80,100,120,140]),
 		 legend=false)
 
+end
+
+# ╔═╡ e491366c-a299-4f32-94e5-fe7c286e476c
+md"""
+We also explore the stopping steps $(m,n_m)$ for $m=1,2,3,\dotsc,500$ and plot the data in a scatter graph.
+"""
+
+# ╔═╡ cae1bcd2-33bc-46f7-a59f-e1a23b5bf571
+begin
+	function collatz(n)
+    n % 2 == 0 ? n ÷ 2 : 3n + 1
+	end
+
+    function stopping_time(m)
+        x, steps = m, 0
+        while x > 1
+              x = collatz(x)
+              steps += 1
+		end
+			return steps
+		end
+
+N = 1:500
+steps = [stopping_time(m) for m in N]
+
+scatter(N, steps, 
+		legend=false,
+		xlabel=L"\mathrm{Initial value}\ \ m", 
+		ylabel=L"\mathrm{Steps}\ \ n_m\ \  \mathrm{to}\ \ 1",
+        title="Collatz stopping steps", markersize=2)
+	
 end
 
 # ╔═╡ cc879f40-6f9e-4afe-8096-bffc1150ad16
@@ -434,15 +465,16 @@ md"""
 
 Pluto/Julia/Mathematica/MATLAB files are found at [https://github.com/fiomfd/ATCM2025](https://github.com/fiomfd/ACTM2025).
 
-- Julia & Pluto.jl file used for this presentation
-- MATLAB livescript file exploring examples
-- Python & Jupyter Notebook file exploring examples
-- Mathematica file exploring examples
+- Julia & Pluto.jl: *.jl 
+- MATLAB livescript: *.mlx
+- Python & Jupyter Notebook: *.ipynb 
+- Mathematica: *.nb (only for number theory)
 
 ###### **Note**: *GeoGebra cannot deal with* $\pi(x)$ *and* $\text{rad}$.
 ######
 
-Interactive notebooks for other topics are available: 
+Interactive notebooks are available: 
+- Number Theory of this talk
 - Calculus I
 - Calculus II
 - Data Analysis
@@ -510,7 +542,7 @@ Primes = "~0.5.7"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.11.6"
+julia_version = "1.11.7"
 manifest_format = "2.0"
 project_hash = "ad6675cead0c9ab482464e29afbc3c60ce2ab45c"
 
@@ -2672,6 +2704,8 @@ version = "1.9.2+0"
 # ╟─9348893d-4c0e-40e3-8d83-5579474ac321
 # ╟─fa039738-e60b-468b-9630-a6c2ee781c1a
 # ╟─1893ba34-2a2a-494c-bc9d-d049712ffa78
+# ╟─e491366c-a299-4f32-94e5-fe7c286e476c
+# ╟─cae1bcd2-33bc-46f7-a59f-e1a23b5bf571
 # ╟─cc879f40-6f9e-4afe-8096-bffc1150ad16
 # ╟─743944e4-83ad-44e6-afe7-91affeb4b965
 # ╟─6b7bb679-7289-4180-9951-fa3fcee43e19
