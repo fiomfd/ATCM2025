@@ -403,9 +403,9 @@ x[1]:= m = $(@bind m Slider(1:1:500, show_value=true, default=1))
 
 # ╔═╡ 1893ba34-2a2a-494c-bc9d-d049712ffa78
 begin
-	x=ones(Int64,140)
+	x=ones(Int64,150)
     x[1]=m
-for n=2:140
+for n=2:150
     if x[n-1]==1
        x[n]=x[n]
     else
