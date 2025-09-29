@@ -38,7 +38,7 @@ md"""
 #####
 ##### [ATCM](https://atcm.mathandtech.org/) 2025, 13-16 December 2025, [Ateneo de Manila University](https://www.ateneo.edu/)
 #####
-ABSTRACT: We present a hands-on example of computational thinking at the intersection of mathematics and programming. Leveraging the Julia programming language and its Pluto.jl notebook environment, we visualize computational explorations inspired by two central themes in modern number theory: the Green–Tao theorem, the abc conjecture, and the Collatz conjecture. By combining built-in primality tests with compact code in Julia, Python, MATLAB, and Mathematica, we generate long arithmetic sequences of primes and enumerate abc-triplets with unusually small radical values. Our educational objective is to help students experience the scale and subtlety of modern number-theoretic phenomena through interactive and reproducible computation.
+ABSTRACT: We present a hands-on example of computational thinking at the intersection of mathematics and programming. Leveraging the Julia programming language and its Pluto.jl notebook environment, we visualize computational explorations inspired by three central themes in modern number theory: the Green–Tao theorem, the abc conjecture, and the Collatz conjecture. By combining built-in primality tests with compact code in Julia, Python, MATLAB, and Mathematica, we generate long arithmetic sequences of primes and enumerate abc-triplets with unusually small radical values. Our educational objective is to help students experience the scale and subtlety of modern number-theoretic phenomena through interactive and reproducible computation.
 
 """
 
@@ -394,6 +394,8 @@ $1,
 \quad
 4\rightarrow2\rightarrow1, 
 \quad\dotsc$
+
+Barina verified the Collatz conjecture is true for all $m\leqq2^{68}$ using workstations. See [this paper](https://doi.org/10.1007/s11227-020-03368-x). 
 
 We examine this conjecture for $m=1,2,3,\dotsc,500$.
 
