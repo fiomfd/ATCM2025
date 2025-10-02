@@ -21,4 +21,5 @@ These notebooks deal with:
 11. Continuous but nowhere differentiable functions
 
 **Fourier Series and Fourier transform**
+
 12. Shannon's sampling theorem and aliasing
