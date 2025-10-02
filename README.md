@@ -19,6 +19,8 @@ In addition to the presentation materials, this repository provides selected int
 
 - **Data Analysis**: public data (HK Observatory) and visualization, central limit theorem
 
+- **Fourier Analysis**: basic theory of Fourier series and its applications (Weyls's equidistribution theorem, continuous but nowhere differentiable functions), Shannon's sampling theorem and aliasing
+
 - **Linear Algebra**: grayscale and RGB images, grayscale and RGB movies, SVD and low rank approximation, Haar wavelet decomposition
 
 All examples are available in:
