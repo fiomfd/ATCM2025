@@ -14,7 +14,7 @@ These notebooks deal with:
 4. Dirichelet kernel
 5. Fourier series of periodic continuous functions
 6. Fourier series of triangular function
-7. A continuous funtion whose fourier series does not converges even pointwisely
+7. A continuous function whose fourier series does not converges even pointwisely
 8. Step function and sawtooth function
 9. Decomposition of piecewise smooth functions
 10. Weyl's equidistribution theorem
