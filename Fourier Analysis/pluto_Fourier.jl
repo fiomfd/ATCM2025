@@ -36,15 +36,15 @@ md"""
 ##### [Hiroyuki Chihara](https://fiomfd.github.io/) (University of the Ryukyus, Okinawa Island, Japan)
 
 ##### Fourier series
-1. Definition of Fourier Series
-2. Real Form of the Fourier Series
-3. Example of Fourier Series
-4. Dirichelet Kernel
-5. Fourier Series of Periodic Continuous Functions
-6. Fourier Series of Triangular Function
-7. A continuous funtion whose fourier series does not converges even pointwisely
-8. Step Function and Sawtooth Function
-9. Decomposition of Piecewise Smooth Functions
+1. Definition of Fourier series
+2. Real Form of the Fourier series
+3. Example of Fourier series
+4. Dirichelet kernel
+5. Fourier series of periodic continuous functions
+6. Fourier series of triangular function
+7. A continuous function whose fourier series does not converges even pointwisely
+8. Step function and sawtooth function
+9. Decomposition of piecewise smooth functions
 10. Weyl's equidistribution theorem
 11. Continuous but nowhere differentiable functions
 
@@ -55,12 +55,12 @@ md"""
 
 # ╔═╡ 79521e83-f32a-48aa-bdf1-27f3f95ecb9e
 md"""
-## Fourier Series
+## Fourier series
 """
 
 # ╔═╡ c299148e-4b85-4bf3-a514-20d1dff0dc59
 md"""
-#### 1. Definition of Fourier Series
+#### 1. Definition of Fourier series
 Throughout this note we consider piecewise continuous $1$-periodic functions $f(x)$ on $\mathbb{R}$, that is, 
 
 -  $f(x+1)=f(x)$ for all $x\in\mathbb{R}$.
@@ -119,7 +119,7 @@ $f(x)\sim\sum_{n=-\infty}^{\infty}c_ne^{2\pi i nx}.$
 
 # ╔═╡ 6f6479b6-265a-4474-8a90-3df0ff98cfac
 md"""
-#### 2. Real Form of the Fourier Series
+#### 2. Real Form of the Fourier series
 If $f(x)$ is real valued, then the Fourier series can be written by the real-valued trigonometric series. In this case $\overline{c_n}=c_{-n}$ holds, and $c_0$ is a real number. If we set for $n=0,1,2,\dotsc$ 
 
 $\overline{c_n}=c_{-n}=\frac{a_n+ib_n}{2},$
@@ -221,7 +221,7 @@ which is useful for computing Fourier coefficients.
 
 # ╔═╡ fd9270b6-bcb1-444a-b2e8-bc07efee3a24
 md"""
-#### 3. Example of Fourier Series
+#### 3. Example of Fourier series
 Let $f(x)$ be a function defined by 
 
 $f(x):=\min\{x-[x],1-x-[1-x]\}, \quad x\in\mathbb{R},$
@@ -324,7 +324,7 @@ $\begin{aligned}
 
 # ╔═╡ a94cb318-c3e9-4285-af58-154d6955f2d5
 md"""
-#### 4. Dirichelet Kernel
+#### 4. Dirichelet kernel
 Suppose $f(x)\in\mathcal{L}$ and $f(x)\sim\displaystyle\sum_{n=-\infty}^\infty c_ne^{2\pi i nx}$. Our basic problems are the following.
 
 - Q1. Does the formal series $\displaystyle\sum_{n=-\infty}^\infty c_ne^{2\pi i nx}$ converge?
@@ -409,7 +409,7 @@ end
 
 # ╔═╡ 897a6954-9e77-41d8-a88d-d43b4c9902c6
 md"""
-#### 5. Fourier Series of Periodic Continuous Functions 
+#### 5. Fourier series of periodic continuous functions 
 We have the following results on the convergence and divergence of the Fourier series of continuous function. 
 
 1. Suppose that $f(x)$ is $1$-periodic Hoelder continuous of degree $\alpha\in(0,1]$, that is, there exists a constant $L>0$ such that $\lvert{f(x)-f(y)}\rvert \leqq L\lvert{x-y}\rvert^\alpha$ for any $x,y\in\mathbb{R}$. Then
@@ -474,7 +474,7 @@ $S_N(x)-f(x)
 
 # ╔═╡ e956146c-d9f1-4c0f-8422-32c29e6d5b69
 md"""
-#### 6. Fourier Series of Triangular Function
+#### 6. Fourier series of triangular function
 Consider a $1$-periodic function  defined by 
 
 $f(x)
@@ -551,7 +551,7 @@ end
 
 # ╔═╡ 729497d1-2a1e-4fd3-bef4-fd3280ffd673
 md"""
-#### 7. A continuous funtion whose fourier series does not converges even pointwisely
+#### 7. A continuous function whose fourier series does not converges even pointwisely
 
 Define a function
 
@@ -631,7 +631,7 @@ end
 
 # ╔═╡ 596f1b0f-7a83-4f48-9316-17ef15d88cbe
 md"""
-#### 8. Step Function and Sawtooth Function
+#### 8. Step function and sawtooth function
 Let $Y(x)$ be the heaviside function, that is, 
 
 $Y(x)
@@ -839,7 +839,7 @@ end
 
 # ╔═╡ 47454abd-5b71-465e-bb2a-a4e3c544d350
 md"""
-#### 9. Decomposition of Piecewise Smooth Functions
+#### 9. Decomposition of piecewise smooth functions
 Finally we consider piecewise smooth $1$-periodic functions $f(x)$ on $\mathbb{R}$, that is, 
 
 -  $f(x+1)=f(x)$ for all $x\in\mathbb{R}$.
@@ -1142,12 +1142,12 @@ end
 
 # ╔═╡ 69f2d10c-38bf-43c5-a7dc-3ac70f5b9763
 md"""
-## Fourier Series and Fourier Transform
+## Fourier series and Fourier transform
 """
 
 # ╔═╡ 99a69d04-aed2-436c-85f9-5f0ca3fb1ace
 md"""
-#### 12. The Nyquist–Shannon Sampling Theorem and Aliasing
+#### 12. The Nyquist–Shannon sampling theorem and aliasing
 
 We state the Nyquist-Shannon sampling theorem and observe an example. This is basically concerned with one-variable integrable functions whose Fourier transforms are compactly supported. Such functions are automatically real analytic and can be extended to entire functions on $\mathbb{C}$. We employ the definition of Fourier transform as follows. For an appropriate one-variable function $f(x)$, its Fourier transform is defined by 
 
