@@ -6,6 +6,7 @@ Here are some notebooks:
 - **Python & Jupyter Notebook**: python_Calculus_I.ipynb [Google Colab](https://colab.research.google.com/github/fiomfd/ATCM2025/blob/main/Calculus%20I/python_Calculus_I.ipynb#scrollTo=f3635921)
 
 These notebooks deal with:
+
 **Fourier series**
 1. Definition of Fourier Series
 2. Real Form of the Fourier Series
@@ -18,5 +19,6 @@ These notebooks deal with:
 9. Decomposition of Piecewise Smooth Functions
 10. Weyl's equidistribution theorem
 11. Continuous but nowhere differentiable functions
+
 **Fourier Series and Fourier transform**
 12. Shannon's sampling theorem and aliasing
