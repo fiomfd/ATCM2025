@@ -20,6 +20,6 @@ These notebooks deal with:
 10. Weyl's equidistribution theorem
 11. Continuous but nowhere differentiable functions
 
-**Fourier Series and Fourier transform**
+**Fourier series and Fourier transform**
 
 12. Shannon's sampling theorem and aliasing
