@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.18
+# v0.20.19
 
 using Markdown
 using InteractiveUtils
@@ -601,16 +601,16 @@ We could compute $f_2$, and not $f_3$, and show the graph of $f_2$ below.
 
 # ╔═╡ adf3292f-4b05-4779-a316-dfe9662c055a
 begin
-	x5 = range(-0.6, 0.6, length = 101);
+	x5 = range(-0.6, 0.6, length = 1201);
 
 	f5=zeros(length(x5))
 	for p=1:length(x5)
 		for k=1:2
-		    g5=zeros(length(x5),3^(3^k))
+			g5=0.0
 			for l=1:3^(3^k)
-			    g5[p,l] += sin(2*pi*l*x5[p])
+			    g5 += sin(2*pi*l*x5[p])
 		    end
-		f5[p] += 2/3^k*sin(2*pi*(2*k+1)*3^(3^k)*x5[p])*g5[p,3^(3^k)]
+		f5[p] += (2/(3^k))*sin(2*pi*(2*k+1)*3^(3^k)*x5[p])*g5
 		end
 	end
 end
@@ -623,7 +623,7 @@ begin
 		 xlim=(-0.6,0.6),
 		 title="The continuous function \$f_2\$",
 		 xticks = ([-0.5 0 0.5;], [-0.5,0,0.5]),
-		 yticks = ([-1/2 0 1/2;], [-1/2,0,1/2]),
+		 yticks = ([-20 0 20;], [-20,0,20]),
 		 xlabel="\$x\$",
 		 legend=false,
 		 legendfont=font(12))
@@ -789,13 +789,13 @@ begin
 		 title="Step Function and its Fourier Series",
 		 xticks = ([0 1/2 1;], [0,1/2,1]),
 		 yticks = ([0 1/2 1;], [0,1/2,1]),
-		 xlabel="\$x\$",
-		 label="\$S_{2K-1}[g](x)\$",
+		 xlabel=L"x",
+		 label=L"S_{2K-1}[g](x)",
 		 legend=:topright,
 		 legendfont=font(12))
 	plot!(x,g,
 		  linewidth=2,
-	      label="\$g(x)\$")
+	      label=L"g(x)")
 end
 
 # ╔═╡ 83ee20aa-e518-442b-af61-d1473d2d3d1a
@@ -828,13 +828,13 @@ begin
 		 title="Sawtooth Function and its Fourier Series",
 		 xticks = ([0 1/2 1;], [0,1/2,1]),
 		 yticks = ([0 1/2 1;], [0,1/2,1]),
-		 xlabel="\$x\$",
-		 label="\$S_N[h](x)\$",
+		 xlabel=L"x",
+		 label=L"S_N[h](x)",
 	     legend=:top,
 		 legendfont=font(12))
 	plot!(x,h,
 		  linewidth=2,
-	      label="\$h(x)\$")
+	      label=L"h(x)")
 end
 
 # ╔═╡ 47454abd-5b71-465e-bb2a-a4e3c544d350
@@ -891,10 +891,10 @@ begin
 		 linewidth=2,
 		 xlim=(-0.15,1.15),
 		 ylim=(-1.1,1.7),
-		 title="An example of piecewise smooth functions",
-		 xticks = ([0 1/2 1;], [0,"\$c\$",1]),
-		 xlabel="\$x\$",
-		 label="\$f(x)\$",
+		 title="A piecewise smooth function",
+		 xticks = ([0 1/2 1;], [0,L"c",1]),
+		 xlabel=L"x",
+		 label=L"f(x)",
 		 legend=:topright,
 		 legendfont=font(12))
 end
@@ -906,10 +906,10 @@ begin
 		 linewidth=2,
 		 xlim=(-0.15,1.15),
 		 ylim=(-1.1,1.7),
-		 title="Decomposition of a piecewise smooth function",
-		 xticks = ([0 1/2 1;], [0,"\$c\$",1]),
-		 xlabel="\$x\$",
-		 label="\$f(x)\$",
+		 title="Decomposition of the piecewise smooth function",
+		 xticks = ([0 1/2 1;], [0,L"c",1]),
+		 xlabel=L"x",
+		 label=L"f(x)",
 		 legend=:top,
 		 legendfont=font(12))
 	plot!(x,Z,
@@ -1049,7 +1049,7 @@ begin
 		 title="Continuous but nowhere differentiable functions",
 		 xticks = ([0 1/2 1;], [0,1/2,1]),
 		 #yticks = ([0 1/2 1;], [0,1/2,1]),
-		 xlabel="\$x\$",
+		 xlabel=L"x",
 		 label="real part",
 		 legend=:top,
 		 legendfont=font(12))
@@ -1188,11 +1188,11 @@ begin
 		 grid=false,
 		 linewidth=2,
 		 ylim=(-0.3,1.2),
-         title="Example: Nyquist-Shannon sampling and aliasing",
+         title="Nyquist-Shannon sampling and aliasing",
          xticks = ([0 51 101 151 201;], [-10,-5,0,5,10]),
-		 xlabel="x",
+		 xlabel=L"x",
          yticks = ([0 0.5 1;], [0,0.5,1]),
-         label=["F(x;s)" "f(x)"],
+         label=[L"F(x;s)" L"f(x)"],
 	     legend=:topright,
 		 legendfont=font(12))
 end
