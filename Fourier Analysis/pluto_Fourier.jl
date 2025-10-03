@@ -891,7 +891,7 @@ begin
 		 linewidth=2,
 		 xlim=(-0.15,1.15),
 		 ylim=(-1.1,1.7),
-		 title="An example of Piecewise Smooth Function",
+		 title="An example of piecewise smooth functions",
 		 xticks = ([0 1/2 1;], [0,"\$c\$",1]),
 		 xlabel="\$x\$",
 		 label="\$f(x)\$",
@@ -906,11 +906,11 @@ begin
 		 linewidth=2,
 		 xlim=(-0.15,1.15),
 		 ylim=(-1.1,1.7),
-		 title="Decomposition of Piecewise Smooth Function",
+		 title="Decomposition of a piecewise smooth function",
 		 xticks = ([0 1/2 1;], [0,"\$c\$",1]),
 		 xlabel="\$x\$",
 		 label="\$f(x)\$",
-		 legend=:topright,
+		 legend=:top,
 		 legendfont=font(12))
 	plot!(x,Z,
 		  linewidth=2,
@@ -923,100 +923,16 @@ begin
 	      label=:false)
 	plot!(x,f0,
 		  linewidth=2,
-	      label="\$f_0(x)=f(x)-f_1(x)-f_2(x)\$")
-	plot!(x,f1+f2,
-		  linewidth=2,
-	      label="\$f_1(x)+f_2(x)\$")
-end
-
-# ╔═╡ d51cfe76-e1a3-4894-a2f5-43949ece5892
-begin
-	plot(x,F,
-		 grid=false,
-		 linewidth=2,
-		 xlim=(-0.15,1.15),
-		 ylim=(-1.1,1.7),
-		 title="How to resolve discontinuity at \$x=c\$",
-		 xticks = ([0 1/2 1;], [0,"\$c\$",1]),
-		 xlabel="\$x\$",
-		 label="\$f(x)\$",
-		 legend=:topright,
-		 legendfont=font(12))
+		  color="magenta",
+	      label=L"f_0(x)")
 	plot!(x,f1,
 		  linewidth=2,
-	      label="\$f_1(x)\$")
-end
-
-# ╔═╡ 692f012c-ec6d-4a2e-b76e-e87cda3155fb
-begin
-	plot(x,F,
-		 grid=false,
-		 linewidth=2,
-		 xlim=(-0.15,1.15),
-		 ylim=(-1.1,1.7),
-		 title="Discontinuity at \$x=c\$ is resolved",
-		 xticks = ([0 1/2 1;], [0,"\$c\$",1]),
-		 xlabel="\$x\$",
-		 label="\$f(x)\$",
-		 legend=:topright,
-		 legendfont=font(12))
-	plot!(x,Z,
-		  linewidth=2,
-	      label=:false)
-	plot!(x,F-f1,
-		  linewidth=2,
-	      label="\$f(x)-f_1(x)\$")
-end
-
-# ╔═╡ d9e2f9f3-b162-46fd-abde-9a1797f20d3a
-begin
-	plot(x,Z,
-		 grid=false,
-		 linewidth=2,
-		 xlim=(-0.15,1.15),
-		 ylim=(-1.1,1.7),
-		 title="How to resolve discontinuity at \$x=0\$ mod \$1\$",
-		 xticks = ([0 1/2 1;], [0,"c",1]),
-		 xlabel="\$x\$",
-		 label=:false,
-		 legend=:topright,
-		 legendfont=font(12))
-	plot!(x,Z,
-		  linewidth=2,
-	      label=:false)
-	plot!(x,F-f1,
-		  linewidth=2,
-	      label="\$f(x)-f_1(x)\$")
+		  color="green",
+	      label=L"f_1(x)")
 	plot!(x,f2,
 		  linewidth=2,
-	      label="\$f_2(x)\$")
-end
-
-# ╔═╡ a24d7900-ecb0-4a42-bc1e-785b182fe677
-begin
-	plot(x,Z,
-		 grid=false,
-		 linewidth=2,
-		 xlim=(-0.15,1.15),
-		 ylim=(-1.1,1.7),
-		 title="Discontinuity at \$x=0\$ mod \$1\$ is resolved",
-		 xticks = ([0 1/2 1;], [0,"\$c\$",1]),
-		 xlabel="\$x\$",
-		 label=:false,
-		 legend=:topright,
-		 legendfont=font(12))
-	plot!(x,Z,
-		  linewidth=2,
-	      label=:false)
-	plot!(x,F-f1,
-		  linewidth=2,
-	      label="\$f(x)-f_1(x)\$")
-	plot!(x,Z,
-		  linewidth=2,
-	      label=:false)
-	plot!(x,f0,
-		  linewidth=2,
-	      label="\$f_0(x)=f(x)-f_1(x)-f_2(x)\$")
+		  color="orange",
+	      label=L"f_2(x)")
 end
 
 # ╔═╡ ed6e4c4d-a686-4271-b964-0fe31c0361be
@@ -1077,7 +993,7 @@ begin
 	        label=false,
 	        xaxis=false,
 	        yaxis=false,
-	        annotations=[(0,0.1,"\$e^{2πiγn}\$",20),(0,-0.15,"\$n=1,2,3,...\$",20)],   
+	        annotations=[(0,0.1,L"e^{2πiγn}",20),(0,-0.15,L"n=1,2,3,...,N",20)],   
 		    annotationguide=:auto)
 	plot!(c101,c102,label=false,linecolor=:magenta)
 end
@@ -2448,10 +2364,6 @@ version = "1.4.1+1"
 # ╟─47454abd-5b71-465e-bb2a-a4e3c544d350
 # ╟─252f9cc5-5c34-49f1-96a7-bf5108f30fbd
 # ╟─d8503bba-e3f3-4f9b-ac4e-bc4f1ffd7fbf
-# ╟─d51cfe76-e1a3-4894-a2f5-43949ece5892
-# ╟─692f012c-ec6d-4a2e-b76e-e87cda3155fb
-# ╟─d9e2f9f3-b162-46fd-abde-9a1797f20d3a
-# ╟─a24d7900-ecb0-4a42-bc1e-785b182fe677
 # ╟─ed6e4c4d-a686-4271-b964-0fe31c0361be
 # ╟─95c91522-88db-4f8f-9c2f-4e2e9cab84b6
 # ╟─85863bee-e916-4d1e-98ab-52c6bc080fac
