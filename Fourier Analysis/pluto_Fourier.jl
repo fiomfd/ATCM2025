@@ -956,9 +956,12 @@ We observe Weyl's equidistribution theorem using a bijection
 $[0,1)\ni\langle{x}\rangle \mapsto e^{2\pi{i}\langle{x}\rangle}=e^{2\pi{i}x} \in \mathbb{S}^1:=\{z\in\mathbb{C} : \lvert{z}\rvert=1\}$.
 """
 
+# ╔═╡ bb9a5642-c3ec-46e6-8dc5-f1100d3a1ed4
+MWeyl=300;
+
 # ╔═╡ 95c91522-88db-4f8f-9c2f-4e2e9cab84b6
 md"""
- $N$ = $(@bind N10 Slider(1:300, show_value=true))
+ $N$ = $(@bind N10 Slider(1:MWeyl, show_value=true))
 
  $\gamma^2$ = $(@bind g2 Slider(2:15, show_value=true))
 """
@@ -970,10 +973,10 @@ begin
 	c102=sin.(2*pi*t);
 
     γ=sqrt(g2);
-	x10=zeros(300);
-	y10=zeros(300);
+	x10=zeros(MWeyl);
+	y10=zeros(MWeyl);
 
-	for n=1:300
+	for n=1:MWeyl
 		x10[n]=cos(2*pi*γ*n);
 		y10[n]=sin(2*pi*γ*n);
 	end
@@ -2365,7 +2368,8 @@ version = "1.4.1+1"
 # ╟─252f9cc5-5c34-49f1-96a7-bf5108f30fbd
 # ╟─d8503bba-e3f3-4f9b-ac4e-bc4f1ffd7fbf
 # ╟─ed6e4c4d-a686-4271-b964-0fe31c0361be
-# ╟─95c91522-88db-4f8f-9c2f-4e2e9cab84b6
+# ╟─bb9a5642-c3ec-46e6-8dc5-f1100d3a1ed4
+# ╠═95c91522-88db-4f8f-9c2f-4e2e9cab84b6
 # ╟─85863bee-e916-4d1e-98ab-52c6bc080fac
 # ╟─e6c5f708-b224-42de-996c-e7ed7b3e9125
 # ╟─75e78914-4f93-4f98-8137-6512ba96e868
