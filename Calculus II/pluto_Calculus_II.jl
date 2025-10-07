@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.16
+# v0.20.19
 
 using Markdown
 using InteractiveUtils
@@ -48,13 +48,20 @@ md"""
 # ╔═╡ 22ef50ed-99c8-4363-8de9-3253995b71cf
 md"""
 ### Tangent Plane of a Surface
+
+Suppose that $f(x,y)$ is a $C^1$-function. Then $f(x,y)$ is totally differentiable everywhere. Consider a surface $z=f(x,y)$. Its tangent plane $z=h(x,y)$ at 
+$\bigl(a,b,f(a,b)\bigr)$ is given by 
+
+$h(x,y):=f(a,b)+f_x(a,b)(x-a)+f_y(a,b)(y-b).$
+
+We observe the relation of $z=f(x,y)$, $z=h(x,y)$, $f_x(a,b)$ and $f_y(a,b)$ near the tngent point $\bigl(a,b,f(a,b)\bigr)$.
 """
 
 # ╔═╡ ebc4b499-b919-418f-a2ad-52b1b061982a
 md"""
- a = $(@bind a1 Slider(-0.7:0.1:0.7, show_value=true, default=-0.3)) 
+ a = $(@bind a Slider(-0.7:0.1:0.7, show_value=true, default=-0.3)) 
  $nbsp $nbsp
- b = $(@bind b1 Slider(-0.7:0.1:0.7, show_value=true, default=-0.3))
+ b = $(@bind b Slider(-0.7:0.1:0.7, show_value=true, default=-0.3))
 
  altitude = $(@bind latitude Slider(0:2:88, show_value=true, default=30)) deg
  $nbsp $nbsp
@@ -63,39 +70,46 @@ md"""
 
 # ╔═╡ bdcefd34-2c55-4eea-aea3-54df8739d6ab
 begin
-	p1=a1;
-	q1=b1;
-	x1 = range(-1, length=21, stop=1);
-	y1 = range(-1, length=21, stop=1);
-	r1=1-a1^2-b1^2;
-	f1=zeros(length(x1),length(y1));
-	h1=zeros(length(x1),length(y1));
-	for k=1:21
-		for l=1:21
-			f1[k,l]=1-x1[k]^2-y1[l]^2;
-			h1[k,l]=1+a1^2+b1^2-2*b1*x1[k]-2*a1*y1[l];
-		end
-	end
+    x = range(-1.2, stop=1.2, length=49)
+    y = range(-1.2, stop=1.2, length=49)
+    yr = reshape(y, :, 1)
+    xr = reshape(x, 1, :)
+
+    f = 5 .- (yr.^2 .+ xr.^2);
+    h = (5 + a^2 + b^2) .- (2b).*yr .- (2a).*xr;
+	
+	na=Int64(floor(20*a+25));
+	nb=Int64(floor(20*b+25));
+	A=a*ones(11);
+	B=b*ones(11);
+	for i=0:0 end
 end
 
 # ╔═╡ f6e03f57-4132-4e08-88b4-4c30efb68c89
 begin
-    wireframe(x1,y1,f1,
-		    size=(800,600),
-	        #grid=false,
-		    zlim=(-1,3),
-	        title="\$z=f(x,y)\$ and \$z=h(x,y)\$",
-		    xticks=([-1 0 1;],[-1,0,1]),
-		    yticks=([-1 0 1;],[-1,0,1]),
-		    zticks=([-1 0 1 2 3;],[-1,0,1,2,3]),
-		    xlabel="\$x\$",
-		    ylabel="\$y\$",
-	        #color=cgrad(:bwr),
-		    camera = (longitude, latitude))
-	surface!(x1,y1,h1,
-		     alpha=0.7, 
-	         colorbar=false)
-	scatter!([p1],[q1],[r1],color=:magenta,label="tangent point",markersize=4)
+p1=wireframe(x, y, f; size=(800,600), zlim=(0,10),
+              title="\$z=f(x,y)\$ and \$z=h(x,y)\$",
+              xticks=([-1 0 1;],[-1,0,1]),
+              yticks=([-1 0 1;],[-1,0,1]),
+              zticks=([0 2 4 6 8;],[0,2,4,6,8]),
+              xlabel=L"x", ylabel=L"y", zlabel=L"z",
+              camera=(longitude, latitude))
+    surface!(x, y, h, alpha=0.5, colorbar=false)
+    scatter!([a],[b],[5 - a^2 - b^2], color=:deeppink, 
+			 label="tangent point", markersize=5)
+	
+p2=	wireframe(x[na:na+10],y[nb:nb+10],f[nb:nb+10,na:na+10],
+              xlabel=L"x", ylabel=L"y", zlabel=L"z",
+			  size=(800,600),
+			  camera = (longitude, latitude))
+	surface!(x[na:na+10],y[nb:nb+10],h[nb:nb+10,na:na+10],alpha=0.5,colorbar=false)
+	plot!(x[na:na+10],B,f[nb,na:na+10],lc=:cyan,lw=3,label=L"z=f(x,b)")
+	plot!(x[na:na+10],B,h[nb,na:na+10],lc=:blue,lw=3,label=L"z=h(x,b)")
+	plot!(A,y[nb:nb+10],f[nb:nb+10,na],lc=:magenta,lw=3,label=L"z=f(a,y)")
+	plot!(A,y[nb:nb+10],h[nb:nb+10,na],lc=:red,lw=3,label=L"z=h(a,y)")
+	scatter!([a],[b],[5-a^2-b^2],color=:deeppink,label="tangent point",markersize=3)
+	
+plot(p1,p2,layout=(1,2),alpha=0.5);
 end
 
 # ╔═╡ be1d8798-c5ec-48cb-96e7-c42bb31dba29
@@ -507,7 +521,7 @@ TestImages = "~1.7.1"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.11.6"
+julia_version = "1.11.7"
 manifest_format = "2.0"
 project_hash = "d88f4c6502d78ad965bae9eb8f7191cde9c863c2"
 
