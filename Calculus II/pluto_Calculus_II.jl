@@ -65,7 +65,7 @@ md"""
 
  altitude = $(@bind latitude Slider(0:2:88, show_value=true, default=30)) deg
  $nbsp $nbsp
- azimuth= $(@bind longitude Slider(0:2:358, show_value=true, default=30)) deg
+ azimuth= $(@bind longitude Slider(-150:2:150, show_value=true, default=30)) deg
 """
 
 # ╔═╡ bdcefd34-2c55-4eea-aea3-54df8739d6ab
