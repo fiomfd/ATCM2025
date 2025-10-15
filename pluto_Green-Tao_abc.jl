@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.18
+# v0.20.19
 
 using Markdown
 using InteractiveUtils
@@ -70,10 +70,37 @@ md"""
 # ╔═╡ f4f20aed-dfb4-45d7-bb71-63dc8200c5a7
 
 
-# ╔═╡ b006d571-aaad-434c-a77d-ca5d7c1e9e91
+# ╔═╡ 2dbb4db8-400e-4cc4-8388-cf637324dcc6
 md"""
 ### The Prime Number Theorem
 
+Let us show you primes up to $1000$.
+"""
+
+# ╔═╡ 9b359db6-b3a9-408e-b9d7-4803117f7afe
+begin
+    function isprime(n)
+		if n <= 1
+			return false
+			end
+		for i in 2:isqrt(n)
+			if n % i == 0
+				return false
+			end
+		end
+		return true
+	end
+		
+	for num in 1:1000
+		if isprime(num)
+			print(num, " ")
+		end
+	end
+
+end
+
+# ╔═╡ b006d571-aaad-434c-a77d-ca5d7c1e9e91
+md"""
 In his work Elements, Euclid first proved that there exist infinitely many prime numbers in c.300 BC. 
 
 For $x>1$, the number of primes less than or equal to $x$ is denoted by $\pi(x)$. Euclid's theorem implies that $\pi(x) \rightarrow \infty$ ($x \rightarrow \infty$).
@@ -418,7 +445,7 @@ for n=2:150
     end
 end
 	scatter(x,
-		 ylim=(1,500),
+		 ylim=(1,1000),
 		 title="The Collatz conjecrue is true?",
 		 xlabel=L"n",
 		 ylabel=L"x[n]",
@@ -2693,6 +2720,8 @@ version = "1.9.2+0"
 # ╟─31213987-bb48-469c-83d4-e768fa21f599
 # ╟─1431fdf4-7db0-4138-b61a-a24917d614ad
 # ╟─f4f20aed-dfb4-45d7-bb71-63dc8200c5a7
+# ╟─2dbb4db8-400e-4cc4-8388-cf637324dcc6
+# ╟─9b359db6-b3a9-408e-b9d7-4803117f7afe
 # ╟─b006d571-aaad-434c-a77d-ca5d7c1e9e91
 # ╟─2bf8e26a-65ce-468c-880f-813e01de5d73
 # ╟─ec85f224-0710-49f7-b795-eacaa90da1a5
