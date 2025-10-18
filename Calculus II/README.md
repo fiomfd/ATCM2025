@@ -4,7 +4,7 @@ Here are some notebooks:
 - **Julia & Pluto**: pluto_Calculus_II.jl  [html](https://fiomfd.github.io/ATCM2025/pluto_Calculus_II.html)
 - **MATLAB livescript**: live_Calculus_II.mlx
 - **Python & Jupyter Notebook**:  python_Calculus_II.ipynb [Google Colab](https://colab.research.google.com/github/fiomfd/ATCM2025/blob/main/Calculus%20II/python_Calculus_II.ipynb)
-- **Matthematica**: mathematica_Calculus_II.nb, visualizing a directional derivative
+- **Matthematica**: mathematica_Calculus_II.nb, visualizing a directional derivative　[YouTube](https://youtu.be/w6ylUCA9bec?si=EKxN_qjywPeblzcT)
 
 These notebooks deal with:
 - Tangent planes of a graph of a function of two variables
