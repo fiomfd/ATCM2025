@@ -4,7 +4,7 @@ This repository provides some interactive notebooks related to the presentation 
 
 - **Julia + Pluto**: pluto_Green-Tao_abc.jl [html](https://fiomfd.github.io/ATCM2025/pluto_Green-Tao_abc.html)
   
-- **MATLAB livescript**: live_Green-Tao_abc.mlx 
+- **MATLAB Live Script**: live_Green-Tao_abc.mlx 
 
 - **Python + Jupyter Notebook**: python_Green-Tao_abc.ipynb [Google Colab](https://colab.research.google.com/github/fiomfd/ATCM2025/blob/main/python_Green-Tao_abc.ipynb)
 
@@ -25,7 +25,7 @@ In addition to the presentation materials, this repository provides selected int
 
 All examples are available in:
 - Julia + Pluto
-- MATLAB Livescript
+- MATLAB Live Script
 - Python + Jupyter Notebook
 
 ####
