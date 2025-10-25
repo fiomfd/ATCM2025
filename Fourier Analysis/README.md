@@ -2,7 +2,7 @@
 
 Here are some notebooks: 
 - **Julia & Pluto**: pluto_Fourier.jl [html](https://fiomfd.github.io/ATCM2025/pluto_Fourier.html)
-- **MATLAB livescript**: live_Fourier.mlx
+- **MATLAB Live Script**: live_Fourier.mlx
 - **Python & Jupyter Notebook**: python_Fourier.ipynb [Google Colab](https://colab.research.google.com/github/fiomfd/ATCM2025/blob/main/Calculus%20I/python_Calculus_I.ipynb#scrollTo=f3635921)
 
 These notebooks deal with:
