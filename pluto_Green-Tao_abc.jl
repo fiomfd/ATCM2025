@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.20
+# v0.20.19
 
 using Markdown
 using InteractiveUtils
@@ -46,7 +46,7 @@ ABSTRACT: We present a hands-on example of computational thinking at the interse
 md"""
 ### About me
 
-- A mathematician working on microlocal analysis in integral geometry (e.g. X-ray transform and CT scanners).
+- A mathematician working on microlocal analysis in integral geometry (2020 MSC [58](https://mathscinet.ams.org/mathscinet/msc/msc2020.html?t=58-XX&btn=Current)J40: Pseudodifferential and Fourier integral operators on manifolds).
 
 - A newcomer to applied mathematics and programming languages Julia/MATLAB, which I started doing recreationally in 2020.
 
