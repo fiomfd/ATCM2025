@@ -347,7 +347,7 @@ K = $(@bind l3 Slider(0:K, show_value=true))
 begin
 	h3=S3[l3+1,:];
     plot([f3,h3],grid=false,linewidth=2,ylim=(-1.2,1.2),
-		title="sin(x) and its Taylor Series",
+		title="sin(x) and its Taylor Series, K=$l3",
 		xticks = ([0 50 100 151 201 251 301;], ["-3π","-2π","-π","0","π","2π","3π"]),
 		xlabel=L"x",
 		label=[L"\sin(x)" "Taylor"],
