@@ -143,8 +143,8 @@ begin
 	Myy = sort(M[M.Year .== yy, :], :Month) 
 	
 	plot(Matrix(Myy[:,3:5]),
-		 title="Monthly max, ave, and min temperatures at HK Observatory",
-		 titlefontsize=12,
+		 title="Monthly max, ave, and min temperatures at HK Observatory in $yy",
+		 titlefontsize=10,
 		 titlefontcolor="blue",
 		 xlim=(0,13),
 		 xticks=([1,2,3,4,5,6,7,8,9,10,11,12]),
@@ -254,7 +254,7 @@ Symbolics = "~5.5.1"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.12.2"
+julia_version = "1.12.3"
 manifest_format = "2.0"
 project_hash = "d4e039388695df74b710fd438b2cd11662c19173"
 
@@ -1210,7 +1210,7 @@ version = "0.44.2+0"
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "FileWatching", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "Random", "SHA", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
-version = "1.12.0"
+version = "1.12.1"
 weakdeps = ["REPL"]
 
     [deps.Pkg.extensions]
