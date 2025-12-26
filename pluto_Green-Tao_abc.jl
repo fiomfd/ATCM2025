@@ -479,7 +479,7 @@ steps = [stopping_time(m) for m in N]
 
 scatter(N, steps, 
 		legend=false,
-		xlabel=L"\mathrm{Initial value}\ \ m", 
+		xlabel=L"\mathrm{Initial}\ \mathrm{value}\ \ m", 
 		ylabel=L"\mathrm{Steps}\ \ n_m\ \  \mathrm{to}\ \ 1",
         title="Collatz stopping steps", markersize=2)
 	
@@ -572,7 +572,7 @@ Primes = "~0.5.7"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.12.2"
+julia_version = "1.12.3"
 manifest_format = "2.0"
 project_hash = "a9215b015ccb58090348fc2f50071f0e1703c4de"
 
@@ -1831,7 +1831,7 @@ version = "0.44.2+0"
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "FileWatching", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "Random", "SHA", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
-version = "1.12.0"
+version = "1.12.1"
 weakdeps = ["REPL"]
 
     [deps.Pkg.extensions]
