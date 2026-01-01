@@ -445,7 +445,7 @@ for n=2:150
     end
 end
 	scatter(x,
-		 ylim=(1,1000),
+		 ylim=(1,2000),
 		 title="The Collatz conjecrue is true?",
 		 xlabel=L"n",
 		 ylabel=L"x[n]",
@@ -2742,10 +2742,10 @@ version = "1.9.2+0"
 # ╟─fa039738-e60b-468b-9630-a6c2ee781c1a
 # ╟─1893ba34-2a2a-494c-bc9d-d049712ffa78
 # ╟─e491366c-a299-4f32-94e5-fe7c286e476c
-# ╟─cae1bcd2-33bc-46f7-a59f-e1a23b5bf571
+# ╠═cae1bcd2-33bc-46f7-a59f-e1a23b5bf571
 # ╟─cc879f40-6f9e-4afe-8096-bffc1150ad16
 # ╟─743944e4-83ad-44e6-afe7-91affeb4b965
-# ╟─6b7bb679-7289-4180-9951-fa3fcee43e19
+# ╠═6b7bb679-7289-4180-9951-fa3fcee43e19
 # ╟─a7d6aa2b-2a7e-4a04-8a82-7ea0f215a4ff
 # ╟─8358cc78-e501-4ab2-9c6a-cf99bc89c906
 # ╟─184019c2-85d9-4dc4-ae0c-820e659f95bd
