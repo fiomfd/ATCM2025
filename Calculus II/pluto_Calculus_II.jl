@@ -40,9 +40,10 @@ md"""
 ##### [Hiroyuki Chihara](https://fiomfd.github.io/) (University of the Ryukyus, Okinawa Island, Japan)
 
 1. Tangent planes
-2. Polar coordinates
-3. Newton's method and gradiend descent
-4. Riemann sums and Riemann integrals
+2. Chain Rule and Directional Derivatives
+3. Polar coordinates
+4. Newton's method and gradiend descent
+5. Riemann sums and Riemann integrals
 """
 
 # ╔═╡ 22ef50ed-99c8-4363-8de9-3253995b71cf
@@ -109,10 +110,138 @@ p2=	wireframe(x[na:na+10],y[nb:nb+10],f[nb:nb+10,na:na+10],
 	plot!(A,y[nb:nb+10],h[nb:nb+10,na],lc=:red,lw=3,label=L"z=h(a,y)")
 	scatter!([a],[b],[5-a^2-b^2],color=:deeppink,label="tangent point",markersize=3)
 	
-plot(p1,p2,layout=(1,2),alpha=0.5);
+plot(p1,p2,layout=(1,2),alpha=0.5, size=(800,350));
 end
 
 # ╔═╡ be1d8798-c5ec-48cb-96e7-c42bb31dba29
+
+
+# ╔═╡ 05d60288-bf37-4262-a2ef-53dd9d70e492
+md"""
+### Chain Rule and Directional Derivatives
+
+"""
+
+# ╔═╡ eb7a39a7-51b4-4b69-aed0-99f20505a08c
+begin
+	theta7=-pi/4
+	a7=cos(theta7)/sqrt(2)
+	b7=sin(theta7)
+    x7 = range(-1.5, stop=2, length=141)
+    y7 = range(-1.2, stop=1.2, length=97)
+    yr7 = reshape(y7, :, 1)
+    xr7 = reshape(x7, 1, :)
+
+    f7 = 10 .- (2*yr7.^2 .+ xr7.^2);
+    h7 = (10 + a7^2 + 2*b7^2) .- (4b7).*yr7 .- (2a7).*xr7;
+
+	mask = yr7 .- sqrt(2) .* (xr7 .- 1) .> 0   # Boolean matrix
+
+    ff7_masked = copy(f7)
+    ff7_masked[.!mask] .= NaN
+	hh7_masked = copy(h7)
+    hh7_masked[.!mask] .= NaN
+	
+	t7 = LinRange(0, 2π, 72);
+	P7(t7) = [cos(t7)/sqrt(2), sin(t7), 0]
+    xs7, ys7, zs7 = [[P7[i] for P7 in P7.(t7)] for i in 1:3]
+	Q7(t7) = [cos(t7)/sqrt(2), sin(t7), 10-(cos(t7))^2/2-2*(sin(t7))^2]
+    xxs7, yys7, zzs7 = [[Q7[i] for Q7 in Q7.(t7)] for i in 1:3]
+
+	s7 = LinRange(0, 10-a7^2-2*b7^2, 20)
+	R7(s7) = [a7,b7,s7]
+	xxxs7, yyys7, zzzs7 = [[R7[i] for R7 in R7.(s7)] for i in 1:3]
+
+	tt7 = LinRange(-0.7, 2.7, 35)
+	AA7(tt7) = [(tt7 + 1)/2, (tt7 - 1)/sqrt(2), 0]
+	BB7(tt7) = [(tt7 + 1)/2, (tt7 - 1)/sqrt(2), 10 - ((tt7-1)^2 + (tt7+1)^2/4)]
+	CC7(tt7) = [(tt7 + 1)/2, (tt7 - 1)/sqrt(2), (10 + a7^2 + 2*b7^2) - (4b7)*(tt7 - 1)/sqrt(2) - a7*(tt7+1)]
+	xAA7, yAA7, zAA7 = [[AA7[i] for AA7 in AA7.(tt7)] for i in 1:3]
+	xBB7, yBB7, zBB7 = [[BB7[i] for BB7 in BB7.(tt7)] for i in 1:3]
+	xCC7, yCC7, zCC7 = [[CC7[i] for CC7 in CC7.(tt7)] for i in 1:3]
+
+	for i=0:0 end
+end
+
+# ╔═╡ aa2b0cd9-9a32-45ae-a0ab-dafd8676e534
+md"""
+altitude = $(@bind latitude7 Slider(-20:2:40, show_value=true, default=10)) deg
+ $nbsp $nbsp
+ azimuth= $(@bind longitude7 Slider(-10:2:80, show_value=true, default=54)) deg
+"""
+
+# ╔═╡ 8553de72-ed29-44e7-adfe-fe325bdb5fb2
+begin
+left=plot(xxxs7,yyys7,zzzs7,label=false,linewidth=1,linecolor=:black, linestyle =:dash)
+	surface!(x7, y7, f7; 
+			  grid=false,
+			  size=(800,600), 
+			  zlim=(0,16),
+              title="\$z=f(x,y)\$, a tangent plane, and a planar curve & its image",
+              titlefontsize=11,
+			  xticks=([],[]),
+              yticks=([],[]),
+              zticks=([],[]),
+              xlabel=L"x", 
+			  ylabel=L"y", 
+			  zlabel=L"z",
+			  xlabelfontsize=15,
+			  ylabelfontsize=15,
+			  zlabelfontsize=15,
+			  label=L"z=f(x,y)",
+			  legendfontsize=9,
+			  legend = :topleft,
+              camera=(longitude7, latitude7),
+			  color=:yellow,
+			  alpha=0.6,
+		      colorbar=false)
+    surface!(x7, y7, h7, color=:pink,alpha=0.6, colorbar=false)
+	plot!(xs7,ys7,zs7, lc=:cyan, lw=2, ratio=1, label="a planar curve")
+	plot!(xxs7,yys7,zzs7, lc=:lightgreen, lw=2, ratio=1, label="the image of the crve")
+    scatter!([a7],[b7],[10 - a7^2 - 2*b7^2], color=:deeppink, 
+			 label="tangent point", markersize=3)
+	scatter!([a7],[b7],[0], color=:orange, 
+			 label=L"(a,b)", markersize=3)
+
+right=plot(xxxs7,yyys7,zzzs7,label=false,linewidth=1,linecolor=:black, linestyle =:dash)
+	surface!(x7, y7, ff7_masked; 
+			  grid=false,
+			  size=(800,600), 
+			  zlim=(0,16),
+              title="The vertical section of the direction",
+              titlefontsize=11,
+			  xticks=([],[]),
+              yticks=([],[]),
+              zticks=([],[]),
+              xlabel=L"x", 
+			  ylabel=L"y", 
+			  zlabel=L"z",
+			  xlabelfontsize=15,
+			  ylabelfontsize=15,
+			  zlabelfontsize=15,
+			  label=L"z=f(x,y)",
+			  legendfontsize=9,
+			  #legend = :topright,
+              camera=(longitude7, latitude7),
+			  color=:yellow,
+			  alpha=0.6,
+		      colorbar=false)
+    surface!(x7, y7, hh7_masked, color=:pink,alpha=0.6, colorbar=false)
+	#surface!(x7, y7, w7, color=:lightgray, colorbar=false)
+	plot!(xs7,ys7,zs7, lc=:cyan, lw=2, ratio=1, label="a planar curve")
+	plot!(xxs7,yys7,zzs7, lc=:lightgreen, lw=2, ratio=1, label="the image of the crve")
+	plot!(xAA7,yAA7,zAA7, lc=:magenta, lw=2, ratio=1, label="the section of the xy-plane")
+	plot!(xBB7,yBB7,zBB7, lc=:blue, lw=2, ratio=1, label="the section of the tangent plane")
+	plot!(xCC7,yCC7,zCC7, lc=:red, lw=2, ratio=1, label="the section of the surface")
+    scatter!([a7],[b7],[10 - a7^2 - 2*b7^2], color=:deeppink, 
+			 label="tangent point", markersize=3)
+	scatter!([a7],[b7],[0], color=:orange, 
+			 label=L"(a,b)", markersize=3)
+	
+	plot(left,right,size=(1000,500),)
+end
+
+# ╔═╡ 400f3681-88d3-4645-b422-724eb862e71d
 
 
 # ╔═╡ 0440bbe2-4865-4fd8-bb6d-5ec6d2eaa480
@@ -521,7 +650,7 @@ TestImages = "~1.9.0"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.12.2"
+julia_version = "1.12.4"
 manifest_format = "2.0"
 project_hash = "c95b4e17265e87e0f80f8f47d26ddd53ba633fc6"
 
@@ -1809,7 +1938,7 @@ version = "0.3.4"
 
 [[deps.MozillaCACerts_jll]]
 uuid = "14a3606d-f60d-562e-9121-12d972cd8159"
-version = "2025.5.20"
+version = "2025.11.4"
 
 [[deps.MultivariatePolynomials]]
 deps = ["ChainRulesCore", "DataStructures", "LinearAlgebra", "MutableArithmetics"]
@@ -1971,7 +2100,7 @@ version = "0.44.2+0"
 [[deps.Pkg]]
 deps = ["Artifacts", "Dates", "Downloads", "FileWatching", "LibGit2", "Libdl", "Logging", "Markdown", "Printf", "Random", "SHA", "TOML", "Tar", "UUIDs", "p7zip_jll"]
 uuid = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
-version = "1.12.0"
+version = "1.12.1"
 weakdeps = ["REPL"]
 
     [deps.Pkg.extensions]
@@ -3011,6 +3140,11 @@ version = "1.9.2+0"
 # ╟─ebc4b499-b919-418f-a2ad-52b1b061982a
 # ╟─f6e03f57-4132-4e08-88b4-4c30efb68c89
 # ╟─be1d8798-c5ec-48cb-96e7-c42bb31dba29
+# ╟─05d60288-bf37-4262-a2ef-53dd9d70e492
+# ╟─eb7a39a7-51b4-4b69-aed0-99f20505a08c
+# ╟─aa2b0cd9-9a32-45ae-a0ab-dafd8676e534
+# ╟─8553de72-ed29-44e7-adfe-fe325bdb5fb2
+# ╟─400f3681-88d3-4645-b422-724eb862e71d
 # ╟─0440bbe2-4865-4fd8-bb6d-5ec6d2eaa480
 # ╟─ca5f6714-8593-480f-8a2e-57cdb71cfcb9
 # ╟─d8691762-85d5-4cac-9fc3-e492c918e75e
