@@ -607,9 +607,13 @@ begin
 	        xticks=([0 1;],[L"a", L"b"]),
 	        yticks=([0 1;],[L"c", L"d"]),
 	        zticks=false,
+			tickfontsize=16,
 	        xlabel=L"x",
 	        ylabel=L"y",
 	        zlabel=L"z",
+			xlabelfontsize=16,
+			ylabelfontsize=16,
+			zlabelfontsize=16,
 	        legend = :none)
 	plot3d!([-0.3,1.3],[0,0],[0,0],
 		   label=false,linewidth=1,linecolor=:black, linestyle =:dash)
