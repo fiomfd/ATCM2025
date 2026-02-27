@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.20.21
+# v0.20.23
 
 using Markdown
 using InteractiveUtils
@@ -120,6 +120,33 @@ end
 md"""
 ### Chain Rule and Directional Derivatives
 
+Suppose that $f(x,y)$ is a $C^1$-function. Then $f(x,y)$ is totally differentiable everywhere. Consider a surface $z=f(x,y)$ and its tangent plane $z=h(x,y)$ at 
+$\bigl(a,b,f(a,b)\bigr)$. Let 
+ 
+$$\gamma
+:=
+\bigl\{
+\Phi(t)=\bigl(\varphi(t),\psi(t)\bigr) 
+:  
+t \in [c,d]
+\bigr\}$$
+
+be a $C^1$-planar curve such that $\Phi(t_0)=\bigl(\varphi(t_0),\psi(t_0)\bigr)=(a,b)$ with some $t_0 \in [c,d]$. Then we have $F(t):=f\bigl(\Phi(t)\bigr)=f\bigl(\varphi(t),\psi(t)\bigr)$ is the restriction of $f$ on $\gamma$ and a $C^1$-function near $t=t_0$. 
+
+The chain rule shows that 
+
+$$\begin{align}
+  F^\prime(t_0)
+& =
+  f_x\bigl(\varphi(t_0),\psi(t_0)\bigr)\varphi^\prime(t_0)
+  +
+  f_y\bigl(\varphi(t_0),\psi(t_0)\bigr)\psi^\prime(t_0)
+\\
+& =
+  \nabla{f}\bigl(\Phi(t_0)\bigr)\cdot\Phi^\prime(t_0),
+\end{align}$$
+
+which is the inner product of the gradient $\nabla{f}(a,b)$ and the tangent vector $\bigl(\varphi^\prime(t_0),\psi^\prime(t_0)\bigr)$ of $\gamma$. We observe this below. 
 """
 
 # ╔═╡ eb7a39a7-51b4-4b69-aed0-99f20505a08c
@@ -439,12 +466,12 @@ $\vec{x}_{n+1}:=\vec{x}_n-s{\nabla}f(\vec{x}_n), \quad n=1,2,3,\dotsc,\quad s>0.
 # ╔═╡ c496505d-f561-4f0f-8a25-a53a01e56c85
 md"""
  learning rate $s$ = $(@bind s6 Slider(0.01:0.01:0.2, show_value=true, default=0.02))
-
+ 
  $x_0$ = $(@bind a6 Slider(-1:0.1:1, show_value=true, default=0.8)) 
 
  $y_0$ = $(@bind b6 Slider(-1:0.1:1, show_value=true, default=0.8))
-
- steps $n$ = $(@bind n6 Slider(0:1:N5, show_value=true, default=0))
+ 
+ steps $N$ = $(@bind n6 Slider(0:1:N5, show_value=true, default=0))
 """
 
 # ╔═╡ c16941ca-a975-443b-a277-a3b91b7a99b4
@@ -654,7 +681,7 @@ TestImages = "~1.9.0"
 PLUTO_MANIFEST_TOML_CONTENTS = """
 # This file is machine-generated - editing it directly is not advised
 
-julia_version = "1.12.4"
+julia_version = "1.12.5"
 manifest_format = "2.0"
 project_hash = "c95b4e17265e87e0f80f8f47d26ddd53ba633fc6"
 
